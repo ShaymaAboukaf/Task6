@@ -31,7 +31,7 @@ body {
 
 .swiper-pagination-bullet-active {
   width: 2rem;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary);
 }
 
 .hero-box {
@@ -79,6 +79,7 @@ body {
   font-weight: inherit;
   border: none;
   outline: none;
+  background-color: transparent;
 }
 
 .search-input::placeholder {
@@ -153,7 +154,7 @@ body {
   font-size: 2.4rem;
   font-weight: 500;
   text-decoration: underline;
-  color: var(--color-primary-light);
+  color: var(--color-primary);
 }
 
 .recent-card {
@@ -247,13 +248,13 @@ body {
 .highest-btn {
   width: 25.8rem;
   padding: 2rem 0 !important;
-  color: var(--color-primary-light);
-  border: 1px solid var(--color-primary-light) !important;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary) !important;
   border-radius: 5rem 0 0 5rem !important;
 }
 
 .highest-btn.active {
-  background-color: var(--color-primary-light) !important;
+  background-color: var(--color-primary) !important;
   color: #fff !important;
 }
 
@@ -290,7 +291,7 @@ body {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 0.8rem;
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 .roommate-rating {
@@ -361,7 +362,7 @@ body {
 }
 
 .seeker-price span {
-  color: var(--color-orange);
+  color: var(--color-secondary);
 }
 
 .seekter-text,
@@ -414,7 +415,7 @@ body {
   padding: 1rem 2rem 1rem 0;
   width: 19rem;
   border-radius: 2.2rem 0 0 2.2rem;
-  background-color: var(--color-orange);
+  background-color: var(--color-secondary);
   color: #fff;
   transition: 0.3s ease-out;
   z-index: 1000;
@@ -440,7 +441,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--color-orange);
+  color: var(--color-secondary);
   background-color: var(--color-grey-light-4);
   margin: 0;
 }
@@ -465,6 +466,7 @@ body {
   .search {
     flex-direction: column;
     align-items: stretch;
+    font-size: 1.8rem;
   }
 
   .input-group {

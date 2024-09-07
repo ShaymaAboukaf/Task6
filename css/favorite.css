@@ -1,0 +1,177 @@
+.favorite-container {
+  max-width: 88rem;
+  margin: 8rem auto;
+  padding: 0 1.6rem;
+  background-color: #fffef9;
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.favorite-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.favorite-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.option-icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background-color: #eaeaea;
+  border: none;
+}
+
+.nav-tabs {
+  padding: 0;
+  margin-bottom: 2.4rem;
+  border: none;
+}
+
+.nav-tabs .nav-link {
+  font-size: 2rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 2rem !important;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: rgba(35, 135, 194, 0.25);
+  color: var(--color-primary);
+}
+
+.favorite-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.favorite-item {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  background-color: #f2eacc;
+  border-radius: 1.1rem;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.favorite-item:hover .option-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+.favorite-item .option-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8rem;
+  transition: 0.5s ease-out;
+  opacity: 0;
+  visibility: 0;
+}
+
+.favorite-img {
+  width: 19rem;
+}
+
+.favorite-img img {
+  width: 100%;
+}
+
+.favorite-img--roommate img {
+  width: 15.6rem;
+  height: 15.6rem;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.favorite-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.favorite-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heading-tertiary {
+  margin: 0;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.rating img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.price {
+  color: #707070;
+}
+
+.price span {
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+.rooms {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.room-icon {
+  width: 2.4rem;
+}
+
+@media only screen and (max-width: 550px) {
+  .favorite-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heading-tertiary {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .favorite-item {
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .favorite-img {
+    max-width: 11rem;
+  }
+
+  .favorite-img--roommate img {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .rooms {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

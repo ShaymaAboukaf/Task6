@@ -31,12 +31,20 @@
 .user-nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.6rem;
 }
 
 .user-icon {
   width: 2.4rem;
   height: 2.4rem;
+}
+
+.user img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .divider {
@@ -70,7 +78,11 @@
 }
 
 .dropdown-btn:focus .user-icon {
-  color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.active .user-icon {
+  fill: var(--color-primary);
 }
 
 .dropdown-btn:focus + .custom-dropdown-menu {
@@ -122,7 +134,7 @@
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary);
 }
 
 .dropdown-item--notify .dropdown-item-img {
@@ -170,7 +182,7 @@
 
 .menu-dropdown {
   width: 40rem;
-  padding: 2rem 4rem;
+  padding: 2.4rem 4rem 3.2rem;
 }
 
 .dropdown-header-icon--float {
@@ -181,9 +193,37 @@
   opacity: 0;
 }
 
+.account-type-wrapper {
+  border-radius: 1rem;
+  background-color: #fffef9;
+  box-shadow: var(--shadow-1);
+}
+
+.account-type-title {
+  padding: 2.4rem;
+  color: #000;
+  border-bottom: 1px solid #dad6c8;
+  margin: 0;
+}
+
 .account-type {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
+  padding: 3.2rem 2.4rem 4.8rem;
+}
+
+.account-type .dropdown-item {
+  justify-content: space-evenly;
+}
+
+.menu-dropdown .dropdown-item {
+  font-size: 1.6rem;
+  font-weight: 300;
+  gap: 2rem;
+  color: #000;
+}
+.menu-dropdown .dropdown-list {
   gap: 3rem;
 }
 

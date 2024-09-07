@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="lib/swiper js/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/shared.css" />
-    <link rel="stylesheet" href="css/plans.css" />
-    <title>See More</title>
+    <link rel="stylesheet" href="css/profile.css" />
+    <title>Profile</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg header">
@@ -86,7 +86,7 @@
               </div>
               <ul class="dropdown-list">
                 <li>
-                  <a href="#" class="dropdown-item">
+                  <a href="chat.html" class="dropdown-item">
                     <img
                       src="img/roommate-1.jpg"
                       alt=""
@@ -109,7 +109,10 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown-item dropdown-item--notify">
+                  <a
+                    href="chat.html"
+                    class="dropdown-item dropdown-item--notify"
+                  >
                     <img
                       src="img/roommate-1.jpg"
                       alt=""
@@ -132,7 +135,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown-item">
+                  <a href="chat.html" class="dropdown-item">
                     <img
                       src="img/roommate-1.jpg"
                       alt=""
@@ -158,7 +161,7 @@
             </div>
           </div>
 
-          <a href="favorite.html">
+          <a href="notifications.html">
             <img
               src="img/svg/bell-fill.svg"
               alt="notifications icon"
@@ -203,44 +206,62 @@
                 ></path>
               </svg>
             </button>
-            <div class="custom-dropdown-menu">
+            <div class="custom-dropdown-menu menu-dropdown">
               <div class="dropdown-menu-header">
                 <h3 class="heading-tertiary">Menu</h3>
               </div>
               <ul class="dropdown-list">
-                <span>Change account type</span>
-                <ul class="dropdown-list account-type">
-                  <li>
-                    <a href="#" class="dropdown-item">
-                      <div class="dropdown-img-box">
-                        <img src="img/svg/arrow-1.svg" alt="" class="arrow-1" />
-                        <img
-                          src="img/roommate-1.jpg"
-                          alt=""
-                          class="dropdown-item-img"
-                        />
-                        <img src="img/svg/arrow-2.svg" alt="" class="arrow-2" />
-                      </div>
+                <div class="account-type-wrapper">
+                  <p class="account-type-title">Change account type</p>
+                  <ul class="dropdown-list account-type">
+                    <li>
+                      <a href="#" class="dropdown-item">
+                        <div class="dropdown-img-box">
+                          <img
+                            src="img/svg/arrow-1.svg"
+                            alt=""
+                            class="arrow-1"
+                          />
+                          <img
+                            src="img/roommate-1.jpg"
+                            alt=""
+                            class="dropdown-item-img"
+                          />
+                          <img
+                            src="img/svg/arrow-2.svg"
+                            alt=""
+                            class="arrow-2"
+                          />
+                        </div>
 
-                      <div class="chat-content">Seeker of room</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="dropdown-item">
-                      <div class="dropdown-img-box">
-                        <img src="img/svg/arrow-1.svg" alt="" class="arrow-1" />
-                        <img
-                          src="img/roommate-1.jpg"
-                          alt=""
-                          class="dropdown-item-img"
-                        />
-                        <img src="img/svg/arrow-2.svg" alt="" class="arrow-2" />
-                      </div>
+                        <h3 class="heading-tertiary">Seeker of room</h3>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">
+                        <div class="dropdown-img-box">
+                          <img
+                            src="img/svg/arrow-1.svg"
+                            alt=""
+                            class="arrow-1"
+                          />
+                          <img
+                            src="img/roommate-1.jpg"
+                            alt=""
+                            class="dropdown-item-img"
+                          />
+                          <img
+                            src="img/svg/arrow-2.svg"
+                            alt=""
+                            class="arrow-2"
+                          />
+                        </div>
 
-                      <div class="chat-content">list place only</div>
-                    </a>
-                  </li>
-                </ul>
+                        <h3 class="heading-tertiary">list place only</h3>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
                 <li>
                   <a href="#" class="dropdown-item">
                     <img src="img/svg/menu-icon-1.svg" alt="" />
@@ -263,6 +284,9 @@
             </div>
           </div>
 
+          <a href="profile.html" class="user">
+            <img src="img/roommate-1.jpg" alt="" />
+          </a>
           <div class="divider"></div>
 
           <div class="custom-dropdown language">
@@ -277,230 +301,199 @@
         </div>
       </div>
     </nav>
+    <div class="profile-bg"></div>
+    <div class="profile-wrapper">
+      <div class="profile-details profile-container">
+        <img src="img/Ellipse 671.png" alt="" class="profile-img" />
+        <div class="profile-tabs">
+          <a href="#about" class="profile-tab active">About</a>
+          <a href="#contact" class="profile-tab">Contact info</a>
+          <a href="#ads" class="profile-tab">Advertisements</a>
+        </div>
+        <aside class="profile-info">
+          <div class="overview">
+            <p class="username">Raneem Doghouz</p>
+            <div class="rating">
+              <img src="img/full-star.svg" alt="" />
+              <span>4.5</span>
+            </div>
+          </div>
+          <p class="user-nationality">Syrian</p>
+          <p class="user-about">
+            Hi there, I am Raneem. I recently moved to Dubai for working and
+            looking for a roommate
+          </p>
 
-    <section class="section-plans">
-      <div class="container plans-header">
-        <h2 class="plans-title"><span>Flexible</span> plans</h2>
-        <p class="plans-description">
-          Choose a monthly subscription plan for your advertisements service.
-        </p>
-      </div>
+          <div class="d-grid">
+            <a href="#" class="btn primary-btn mb-4">Edit Profile info</a>
+          </div>
 
-      <div class="container">
-        <div class="swiper plans-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="plan plan--starter">
-                <div class="plan-top">
-                  <h3 class="plan-name">Starter</h3>
-                  <p class="plan-price plan-price--starter">Free</p>
-                </div>
-                <p class="plan-description">
-                  Post your advertisements for free
-                </p>
-                <ul class="plan-list">
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can add <strong>5</strong> posts </span>
-                  </li>
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can reactive <strong>2</strong> posts </span>
-                  </li>
-                </ul>
-              </div>
+          <div class="d-grid">
+            <a href="#" class="btn secondary-btn">Add ad</a>
+          </div>
+
+          <div class="about" id="about">
+            <h3 class="heading-tertiary">About</h3>
+            <div class="about-item">
+              <img src="img/icon/Path 3614.svg" alt="" class="about-icon" />
+              <span>Dubai, Al Aweer </span>
             </div>
-            <div class="swiper-slide">
-              <div class="plan plan--golden">
-                <div class="plan-top">
-                  <h3 class="plan-name">Golden</h3>
-                  <p class="plan-price plan-price--golden">$ 50</p>
-                </div>
-                <p class="plan-description">
-                  Buy golden plan for more features
-                </p>
-                <ul class="plan-list">
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can add <strong>10</strong> posts </span>
-                  </li>
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can reactive <strong>5</strong> posts </span>
-                  </li>
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can upgrade <strong>3</strong> posts </span>
-                  </li>
-                </ul>
-                <div class="d-grid mt-auto">
-                  <a href="#" class="btn btn--golden">Buy now</a>
-                </div>
-              </div>
+            <div class="about-item">
+              <img
+                src="img/icon/person-fill-blue.svg"
+                alt=""
+                class="about-icon"
+              />
+              <span>Male</span>
             </div>
-            <div class="swiper-slide">
-              <div class="plan plan--silver">
-                <div class="plan-top">
-                  <h3 class="plan-name">Silver</h3>
-                  <p class="plan-price plan-price--silver">$ 43</p>
+            <div class="about-item">
+              <img
+                src="img/icon/cake_24dp_FILL0_wght400_GRAD0_opsz24 1.svg"
+                alt=""
+                class="about-icon"
+              />
+              <span>June 3 , 1993</span>
+            </div>
+          </div>
+
+          <div class="user-contact" id="contact">
+            <h3 class="heading-tertiary">Contact</h3>
+            <li class="contact-item">
+              <a href="mailto:Raneem.doghouz@gmail.com" class="contact-link">
+                <img
+                  src="img/icon/envelope-fill-black.svg"
+                  alt=""
+                  class="contact-icon"
+                />
+                <span>Raneem.doghouz@gmail.com</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <a href="tel:+971 586 834 566" class="contact-link"
+                ><img
+                  src="img/icon/telephone-fill-blue.svg"
+                  alt=""
+                  class="contact-icon"
+                /><span>+971 586 834 566</span></a
+              >
+            </li>
+          </div>
+        </aside>
+        <main class="profile-ads">
+          <h3 class="ads-heading">Raneem’s Advertisements</h3>
+          <div class="ads" id="ads">
+            <div class="ad-box">
+              <div class="ad-header">
+                <div class="ad-user">
+                  <img src="img/Ellipse 671.png" alt="" class="ad-author-img" />
+                  <p class="ad-author-name">Raneem Doghouz</p>
                 </div>
-                <p class="plan-description">
-                  Buy silver plan for more features
-                </p>
-                <ul class="plan-list">
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can add <strong>7</strong> posts </span>
-                  </li>
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can reactive <strong>4</strong> posts </span>
-                  </li>
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can upgrade <strong>2</strong> posts </span>
-                  </li>
-                </ul>
-                <div class="d-grid mt-auto">
-                  <a href="#" class="btn btn--primary">Buy now</a>
+                <button>
+                  <img src="img/Group 437.svg" alt="" class="ad-header-icon" />
+                </button>
+              </div>
+
+              <div class="ad-imgs">
+                <div class="ad-img-box">
+                  <img src="img/Rectangle 966.png" alt="" />
+                </div>
+                <div class="ad-img-box">
+                  <img src="img/Rectangle 1070.png" alt="" />
                 </div>
               </div>
+
+              <p class="ad-text">
+                Hi there, I have apartment and I'm looking for roommate!
+              </p>
+              <p class="author-city">Dubai, Al Aweer</p>
+
+              <div class="ad-btns">
+                <button>
+                  <img src="img/heart-fill.svg" alt="" />
+                  <span>Favorite</span>
+                </button>
+                <button>
+                  <img src="img/Group 381.svg" alt="" />
+                  <span>Message</span>
+                </button>
+              </div>
             </div>
-            <div class="swiper-slide">
-              <div class="plan plan--bronze">
-                <div class="plan-top">
-                  <h3 class="plan-name">Bronze</h3>
-                  <p class="plan-price plan-price--bronze">$ 30</p>
+            <div class="ad-box">
+              <div class="ad-header">
+                <div class="ad-user">
+                  <img src="img/Ellipse 671.png" alt="" class="ad-author-img" />
+                  <p class="ad-author-name">Raneem Doghouz</p>
                 </div>
-                <p class="plan-description">
-                  Buy bronze plan for more features
-                </p>
-                <ul class="plan-list">
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can add <strong>6</strong> posts </span>
-                  </li>
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can reactive <strong>3</strong> posts </span>
-                  </li>
-                  <li class="plan-item">
-                    <img src="img/svg/check-lg.svg" alt="" />
-                    <span>You can upgrade <strong>1</strong> posts </span>
-                  </li>
-                </ul>
-                <div class="d-grid mt-auto">
-                  <a href="#" class="btn btn--primary">Buy now</a>
+                <button>
+                  <img src="img/Group 437.svg" alt="" class="ad-header-icon" />
+                </button>
+              </div>
+
+              <div class="ad-imgs">
+                <div class="ad-img-box">
+                  <img src="img/Rectangle 1000.png" alt="" />
                 </div>
+              </div>
+
+              <p class="ad-text">
+                Hi there, I have apartment and I'm looking for roommate!
+              </p>
+              <p class="author-city">Dubai, Al Aweer</p>
+
+              <div class="ad-btns">
+                <button>
+                  <img src="img/heart-fill.svg" alt="" />
+                  <span>Favorite</span>
+                </button>
+                <button>
+                  <img src="img/Group 381.svg" alt="" />
+                  <span>Message</span>
+                </button>
+              </div>
+            </div>
+            <div class="ad-box">
+              <div class="ad-header">
+                <div class="ad-user">
+                  <img src="img/Ellipse 671.png" alt="" class="ad-author-img" />
+                  <p class="ad-author-name">Raneem Doghouz</p>
+                </div>
+                <button>
+                  <img src="img/Group 437.svg" alt="" class="ad-header-icon" />
+                </button>
+              </div>
+
+              <p class="ad-text">
+                Hi there, I have apartment and I'm looking for roommate!
+              </p>
+              <p class="author-city">Dubai, Al Aweer</p>
+
+              <div class="ad-btns">
+                <button>
+                  <img src="img/heart-fill.svg" alt="" />
+                  <span>Favorite</span>
+                </button>
+                <button>
+                  <img src="img/Group 381.svg" alt="" />
+                  <span>Message</span>
+                </button>
               </div>
             </div>
           </div>
-        </div>
+        </main>
       </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="logo-col">
-            <a href="homepage.html" class="footer-logo"
-              ><img src="img/logo.png" alt="logo" class="logo"
-            /></a>
-            <p class="footer-description">
-              Find your prefer room and choose roommate who agree.
-            </p>
-            <ul class="social-links">
-              <li>
-                <a href="www.instagram.com" target="_blank"
-                  ><img src="img/svg/instagram.svg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="www.facebook.com" target="_blank"
-                  ><img src="img/svg/facebook.svg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="www.twitter.com" target="_blank"
-                  ><img src="img/svg/twitter.svg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="www.tiktok.com" target="_blank"
-                  ><img src="img/svg/twitter.svg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="www.whatsapp.com" target="_blank"
-                  ><img src="img/svg/whatsapp.svg" alt=""
-                /></a>
-              </li>
-            </ul>
-            <a href="www.Romyco.com" class="site footer-link">www.Romyco.com</a>
-          </div>
-
-          <div class="nav-col">
-            <p class="footer-heading">Terms &amp; Policies</p>
-            <ul class="footer-nav">
-              <li><a href="#" class="footer-link">Terms of services</a></li>
-              <li><a href="#" class="footer-link">Privacy policy</a></li>
-              <li><a href="#" class="footer-link">Cookie policy</a></li>
-            </ul>
-          </div>
-
-          <nav class="nav-col">
-            <p class="footer-heading">Contact</p>
-            <ul class="footer-nav">
-              <li class="contact">
-                <a href="mailto:roomyco@room.com" class="footer-link contact">
-                  <img src="img/svg/envelope-fill.svg" alt="" />
-                  <span>roomyco@room.com</span>
-                </a>
-              </li>
-              <li>
-                <a href="tel:+971 586 834 566" class="footer-link contact">
-                  <img src="img/svg/telephone-fill.svg" alt="" />
-                  <span>+971 586 834 56</span></a
-                >
-              </li>
-              <li class="contact">
-                <img src="img/svg/geo-alt-fill.svg" alt="" /><span
-                  class="location"
-                  >Emirates</span
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="copyright">
-          <p>All rights are save 2024 by company.com</p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="lib/swiper js/swiper-bundle.min.js"></script>
+    </div>
 
     <script>
-      const swiper = new Swiper(".plans-swiper", {
-        slidesPerView: 1.2,
-        spaceBetween: 20,
-        breakpoints: {
-          640: {
-            slidesPerView: 1.5,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2.5,
-            spaceBetween: 40,
-          },
-
-          1200: {
-            slidesPerView: 3.5,
-            spaceBetween: 25,
-          },
-        },
+      function removeActive() {
+        document.querySelectorAll(".profile-tab").forEach((item) => {
+          item.classList.remove("active");
+        });
+      }
+      document.querySelectorAll(".profile-tab").forEach((item) => {
+        item.addEventListener("click", function (e) {
+          removeActive();
+          e.target.classList.add("active");
+        });
       });
     </script>
   </body>

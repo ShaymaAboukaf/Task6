@@ -1,6 +1,8 @@
 :root {
-  --color-primary-light: #2387c2;
-  --color-primary: #035781;
+  --color-primary: #2387c2;
+  --color-primary-dark: #035781;
+
+  --color-secondary: #f3704a;
 
   --color-grey-light-1: #d3ceba;
   --color-grey-light-2: rgba(217, 217, 215, 0.83);
@@ -12,13 +14,13 @@
   --color-grey-dark-2: #474747;
 
   --color-yellow: #ffd433;
-  --color-orange: #f3704a;
 
   --gradient-1: linear-gradient(to right, #2387c2, #11405c);
   --gradient-2: linear-gradient(to right bottom, #eeebd3, #292c2d);
+  --gradient-3: linear-gradient(#f8f4db, #fffffe);
 
   --color-text: #292c2d;
-  --shadow-1: 0 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow-1: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 
 ::-webkit-scrollbar {
@@ -31,7 +33,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary-light);
+  background: var(--color-primary);
   border-radius: 10px;
 }
 
@@ -44,6 +46,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-text);
+  background: linear-gradient(--gradient-3);
 }
 
 ul {
@@ -82,6 +85,17 @@ p {
   font-size: 2rem;
 }
 
+.btn--primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover,
+.btn--primary:active {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
 .grid {
   display: grid;
   gap: 4.8rem;
@@ -92,7 +106,7 @@ p {
 }
 
 a.active {
-  color: var(--color-primary) !important;
+  color: var(--color-primary-dark) !important;
 }
 
 @media only screen and (max-width: 75em) {

@@ -6,21 +6,15 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.btn--primary {
-  background-color: var(--color-primary-light);
-  color: #fff;
-}
-
-.btn--primary:hover,
-.btn--primary:active {
-  background-color: var(--color-primary-light);
-  color: #fff;
-}
-
 .btn--golden {
   background-color: #dfbb33 !important;
   color: #fff !important;
 }
+
+/* ***************** */
+/* PLANS SECTION */
+/* ***************** */
+
 .section-plans {
   padding: 9.6rem 0;
 }
@@ -38,7 +32,7 @@
 }
 
 .plans-title span {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 .plans-description {
@@ -60,29 +54,27 @@
 }
 
 .plan--golden {
-  border: 1px solid #ffd433;
+  border: 1px solid var(--color-yellow);
   background-color: rgba(255, 212, 51, 0.19);
 }
 
 .plan--silver,
 .plan--bronze {
-  border: 1px solid #2387c2;
+  border: 1px solid var(--color-primary);
   background-color: #2387c230;
 }
 
 .plan--golden .plan-name {
-  color: #ffd433;
+  color: var(--color-yellow);
 }
 
 .plan-price--starter {
   background-color: rgba(217, 217, 217, 0.671);
 }
 
-.plan-price--golden {
-  background-color: rgba(243, 112, 74, 0.12);
-}
-
-.plan-price--silver {
+.plan-price--golden,
+.plan-price--silver,
+.plan-price--bronze {
   background-color: rgba(243, 112, 74, 0.12);
 }
 
@@ -95,14 +87,14 @@
 .plan-name {
   font-size: 2rem;
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 .plan-price {
   font-size: 2rem;
   font-weight: 600;
   padding: 0.8rem 1.2rem;
-  color: var(--color-orange);
+  color: var(--color-secondary);
   border-radius: 0.6rem;
   margin: 0;
 }
