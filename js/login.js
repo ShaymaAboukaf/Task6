@@ -12,8 +12,6 @@ document.querySelector(".login-form").addEventListener("submit", function (e) {
 });
 
 function validateForm() {
-  // phoneError.innerHTML = "";
-  // passwordError.innerHTML = "";
   const phoneInput = document.querySelector(".phone input").value;
   const passwordInput = document.querySelector(".password input").value;
 

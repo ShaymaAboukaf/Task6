@@ -94,17 +94,17 @@ p {
 }
 
 .btn--primary {
-  background-color: var(--color-primary);
-  color: #fff;
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
+  border: 2px solid transparent !important;
 }
 
 .btn--primary:hover,
 .btn--primary:active {
-  background-color: var(--color-primary);
-  color: #fff;
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
 }
 
-.btn--secondary,
 .btn--secondary {
   background-color: #fff !important;
   color: var(--color-primary) !important;
