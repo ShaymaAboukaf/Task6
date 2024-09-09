@@ -98,6 +98,11 @@
   margin-bottom: 1rem;
 }
 
+.form-icon {
+  width: 1.8rem;
+  flex-shrink: 0;
+}
+
 .custom-input input {
   font-family: inherit;
   font-size: 1.6rem;
