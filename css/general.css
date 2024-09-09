@@ -24,7 +24,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -33,7 +33,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
+  background: var(--color-secondary);
   border-radius: 10px;
 }
 
@@ -46,7 +46,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-text);
-  background: linear-gradient(--gradient-3);
+  background: linear-gradient(var(--gradient-3));
 }
 
 ul {
@@ -85,6 +85,14 @@ p {
   font-size: 2rem;
 }
 
+.btn {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+}
+
 .btn--primary {
   background-color: var(--color-primary);
   color: #fff;
@@ -94,6 +102,13 @@ p {
 .btn--primary:active {
   background-color: var(--color-primary);
   color: #fff;
+}
+
+.btn--secondary,
+.btn--secondary {
+  background-color: #fff !important;
+  color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary) !important;
 }
 
 .grid {
