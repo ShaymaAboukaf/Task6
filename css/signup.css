@@ -328,18 +328,27 @@
     flex-direction: column;
   }
 
+  .signup .content-heading {
+    min-height: 30rem;
+    flex: 0 0 auto;
+  }
+
+  .content-heading .v-style {
+    gap: 4rem;
+  }
+
   .intro-box {
     justify-content: center;
   }
 
   .steps {
     flex-direction: row;
-    top: 28%;
+    top: 33%;
     left: 50%;
   }
 
   .content-form {
-    padding: 5rem;
+    padding: 4rem;
   }
 
   .content-form::before {
