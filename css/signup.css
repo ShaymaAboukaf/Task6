@@ -2,6 +2,7 @@
   max-width: 140rem;
   margin: 0 auto;
   padding: 0;
+  position: relative;
 }
 
 .wrapper {
@@ -329,7 +330,7 @@
   }
 
   .signup .content-heading {
-    min-height: 30rem;
+    min-height: 30vh;
     flex: 0 0 auto;
   }
 
@@ -343,7 +344,7 @@
 
   .steps {
     flex-direction: row;
-    top: 33%;
+    top: 25%;
     left: 50%;
   }
 
