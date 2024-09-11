@@ -269,6 +269,15 @@
   padding: 0.5rem 0;
 }
 
+.navbar-nav {
+  row-gap: 1rem;
+}
+
+.navbar-toggler {
+  font-size: 2rem;
+  border: 2px solid var(--color-secondary);
+}
+
 /**************************/
 /* Footer */
 /**************************/
@@ -399,6 +408,15 @@
 @media only screen and (max-width: 61.94em) {
   .custom-dropdown-menu {
     right: auto;
+  }
+
+  .navbar-collapse {
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+
+  .user-nav {
+    padding: 1rem 0.8rem 0.8rem;
   }
 }
 
