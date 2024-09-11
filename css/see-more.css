@@ -52,14 +52,12 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 1.5rem;
-
   background-color: var(--color-grey-light-2);
   border-radius: 1rem;
-
   margin-bottom: 2rem;
 }
 
-.input-group {
+.search-group {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -471,7 +469,7 @@ body {
     font-size: 1.8rem;
   }
 
-  .input-group {
+  .search-group {
     gap: 0;
   }
 
