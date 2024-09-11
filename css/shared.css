@@ -15,7 +15,7 @@
   transform: translateX(-50%);
   width: 100%;
   max-width: 130rem;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .header-img {
@@ -396,7 +396,24 @@
   }
 }
 
+@media only screen and (max-width: 61.94em) {
+  .custom-dropdown-menu {
+    right: auto;
+  }
+}
+
 @media only screen and (max-width: 35em) {
+  .custom-dropdown {
+    position: static;
+  }
+
+  .custom-dropdown-menu {
+    left: 5%;
+    top: 100%;
+    width: 90%;
+    padding: 2rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
