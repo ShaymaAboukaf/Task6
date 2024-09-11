@@ -276,6 +276,7 @@
 .navbar-toggler {
   font-size: 2rem;
   border: 2px solid var(--color-secondary);
+  box-shadow: none !important;
 }
 
 /**************************/

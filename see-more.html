@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="lib/swiper js/swiper-bundle.min.css" />
     <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/notifications.css" />
     <link rel="stylesheet" href="css/shared.css" />
+
     <link rel="stylesheet" href="css/see-more.css" />
     <title>See More</title>
   </head>
@@ -607,12 +609,343 @@
               </div>
             </div>
 
-            <a href="notifications.html">
-              <img
-                src="img/svg/bell-fill.svg"
-                alt="notifications icon"
-                class="user-icon"
-            /></a>
+            <div class="custom-dropdown">
+              <button class="dropdown-btn">
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  class="user-icon"
+                >
+                  <path
+                    d="M16 32c2.209 0 4-1.791 4-4h-8c0 2.209 1.791 4 4 4z"
+                  ></path>
+                  <path
+                    d="M17.99 2.198c0.006-0.065 0.010-0.131 0.010-0.198 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.067 0.003 0.133 0.010 0.198-4.569 0.923-8.010 4.961-8.010 9.802 0 2.195-1 12-4 14h28c-3-2-4-11.805-4-14 0-4.841-3.44-8.879-8.010-9.802z"
+                  ></path>
+                </svg>
+              </button>
+
+              <div class="custom-dropdown-menu notifications">
+                <div class="notifications-header">
+                  <h4 class="notifications-title">Notifications</h4>
+
+                  <button class="chat-icons">
+                    <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                  </button>
+                </div>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="all-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#all-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="all-tab-pane"
+                      aria-selected="true"
+                    >
+                      All
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="unread-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#unread-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="unread-tab-pane"
+                      aria-selected="false"
+                    >
+                      Unread
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="all-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="all-tab"
+                    tabindex="0"
+                  >
+                    <div class="notification-box">
+                      <h4 class="notification-title">New</h4>
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="match-avatar notification-imgs">
+                            <img src="img/roommate-5.jpg" alt="" />
+                            <img src="img/roommate-2.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>
+                                There are a Roommates who matches your profile.
+                                Check it out now!
+                              </p>
+                              <span>11m</span>
+                            </div>
+                          </div>
+
+                          <div class="notification-circle"></div>
+                          <div class="option-icon">
+                            <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="notification-box">
+                      <h4 class="notification-title">Today</h4>
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 24C2 24 0 24 0 22C0 20 2 14 12 14C22 14 24 20 24 22C24 24 22 24 22 24H2Z"
+                                  fill="black"
+                                />
+                                <path
+                                  d="M12 12C15.3137 12 18 9.31371 18 6C18 2.68629 15.3137 0 12 0C8.68629 0 6 2.68629 6 6C6 9.31371 8.68629 12 12 12Z"
+                                  fill="#000"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+
+                          <div class="notification-text">
+                            <div>
+                              <p>Someone adding your ad to favorites!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="notification-box">
+                      <h4 class="notification-title">Older</h4>
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs noti-avatar">
+                            <img src="img/roommate-1.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Ali Saebe gave you a rating.</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="31"
+                                height="28"
+                                viewBox="0 0 31 28"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M1.07723 5.34992C1.44879 3.74413 2.91282 2.54541 4.66227 2.54541H26.7194C28.4689 2.54541 29.9329 3.74413 30.3045 5.34992L15.6908 14.1101L1.07723 5.34992ZM0.986084 7.40833V20.2162L11.6529 13.8026L0.986084 7.40833ZM13.4142 14.8584L1.33876 22.1189C1.9283 23.3384 3.19488 24.1818 4.66227 24.1818H26.7194C28.1868 24.1818 29.4534 23.3384 30.0429 22.1189L17.9675 14.8584L15.6908 16.2231L13.4142 14.8584ZM19.7288 13.8026L30.3956 20.2162V7.40833L19.7288 13.8026Z"
+                                  fill="#292C2D"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>You have a new message!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs noti-avatar">
+                            <img src="img/roommate-5.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Dema doghouz request to follow you.</p>
+                              <span>14h</span>
+                            </div>
+                            <div class="confirm-request">
+                              <div class="confirm-btn button">Confirm</div>
+                              <div class="delete-btn button">Delete</div>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 24C2 24 0 24 0 22C0 20 2 14 12 14C22 14 24 20 24 22C24 24 22 24 22 24H2Z"
+                                  fill="black"
+                                />
+                                <path
+                                  d="M12 12C15.3137 12 18 9.31371 18 6C18 2.68629 15.3137 0 12 0C8.68629 0 6 2.68629 6 6C6 9.31371 8.68629 12 12 12Z"
+                                  fill="black"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Someone adding your ad to favorites!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs noti-avatar">
+                            <img src="img/roommate-1.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Ali Saebe gave you a rating.</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="31"
+                                height="28"
+                                viewBox="0 0 31 28"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M1.07723 5.34992C1.44879 3.74413 2.91282 2.54541 4.66227 2.54541H26.7194C28.4689 2.54541 29.9329 3.74413 30.3045 5.34992L15.6908 14.1101L1.07723 5.34992ZM0.986084 7.40833V20.2162L11.6529 13.8026L0.986084 7.40833ZM13.4142 14.8584L1.33876 22.1189C1.9283 23.3384 3.19488 24.1818 4.66227 24.1818H26.7194C28.1868 24.1818 29.4534 23.3384 30.0429 22.1189L17.9675 14.8584L15.6908 16.2231L13.4142 14.8584ZM19.7288 13.8026L30.3956 20.2162V7.40833L19.7288 13.8026Z"
+                                  fill="#292C2D"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>You have a new message!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="unread-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="unread-tab"
+                    tabindex="0"
+                  >
+                    <div class="notification-box">
+                      <h4 class="notification-title">New</h4>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="match-avatar notification-imgs">
+                            <img src="img/roommate-5.jpg" alt="" />
+                            <img src="img/roommate-2.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>
+                                There are a Roommates who matches your profile.
+                                Check it out now!
+                              </p>
+                              <span>11m</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="notification-box">
+                      <h4 class="notification-title">Today</h4>
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 24C2 24 0 24 0 22C0 20 2 14 12 14C22 14 24 20 24 22C24 24 22 24 22 24H2Z"
+                                  fill="black"
+                                />
+                                <path
+                                  d="M12 12C15.3137 12 18 9.31371 18 6C18 2.68629 15.3137 0 12 0C8.68629 0 6 2.68629 6 6C6 9.31371 8.68629 12 12 12Z"
+                                  fill="black"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Someone adding your ad to favorites!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="custom-dropdown">
               <button class="dropdown-btn">
                 <svg
