@@ -65,6 +65,14 @@ p {
   font-weight: 300;
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+  line-height: inherit;
+}
+
 .container {
   max-width: 130rem;
   margin: 0 auto;

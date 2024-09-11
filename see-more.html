@@ -11,16 +11,467 @@
     />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="lib/swiper js/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/add-ad.css" />
     <link rel="stylesheet" href="css/see-more.css" />
     <title>See More</title>
   </head>
   <body>
-    <a href="#" class="add-add">
+    <div class="add-add">
       <div class="plus-icon"><p class="plus">+</p></div>
-      <p class="add-add-text">Add ad</p>
-    </a>
+      <button
+        class="add-add-text"
+        data-bs-toggle="modal"
+        data-bs-target="#createPostModal"
+      >
+        Add ad
+      </button>
+    </div>
+    <!-- Create Post Modal -->
+
+    <div
+      class="modal fade"
+      id="createPostModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content add-ad">
+          <div class="modal-header add-header">
+            <h2 class="title">Create Post</h2>
+            <button
+              type="button"
+              class="close-btn"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="img/svg/x.svg" alt="" />
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3 class="heading-tertiary text-center mt-2 mb-5">
+              Advertisements of search for a roommate!
+            </h3>
+            <div class="ad-content">
+              <div class="box">
+                <div class="div"></div>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="have-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#have-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="have-tab-pane"
+                      aria-selected="true"
+                    >
+                      Have room
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="need-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#need-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="need-tab-pane"
+                      aria-selected="false"
+                    >
+                      Need room
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="have-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="have-tab"
+                  tabindex="0"
+                >
+                  <form class="ad-form">
+                    <div class="box">
+                      <label for="title">Title</label>
+                      <div class="pb-4 divide">
+                        <input
+                          type="text"
+                          class="ad-input"
+                          value="Hi there, I have apartment and I'm looking for roommate!"
+                        />
+                      </div>
+                    </div>
+                    <div class="box">
+                      <label for="title">Address</label>
+                      <div class="select-wrapper pb-4 divide">
+                        <div>
+                          <label for="emirate">Emirate</label>
+                          <div class="select-menu">
+                            <div class="select-btn">
+                              <span class="sBtn-text" data-value="">Dubai</span>
+                              <img src="img/svg/Chevron.svg" alt="" />
+                            </div>
+                            <ul class="options">
+                              <li class="option">
+                                <span class="option-text">Dubai</span>
+                              </li>
+                              <li class="option">
+                                <span class="option-text">Ajman</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div>
+                          <label for="emirate">City</label>
+                          <div class="select-menu">
+                            <div class="select-btn">
+                              <span class="sBtn-text" data-value=""
+                                >Al Wasel</span
+                              >
+                              <img src="img/svg/Chevron.svg" alt="" />
+                            </div>
+                            <ul class="options">
+                              <li class="option">
+                                <span class="option-text">Al Wasel</span>
+                              </li>
+                              <li class="option">
+                                <span class="option-text">Ajman</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box">
+                      <label for="title">Location</label>
+                      <div class="location pb-4 divide">
+                        <input
+                          type="text"
+                          class="ad-input"
+                          id="coordinates"
+                          placeholder="Set point on map"
+                          readonly
+                        />
+                        <svg
+                          width="18"
+                          height="23"
+                          viewBox="0 0 18 23"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="location-icon"
+                        >
+                          <path
+                            d="M9 23C9 23 18 14.8259 18 8.625C18 3.86154 13.9706 0 9 0C4.02944 0 0 3.86154 0 8.625C0 14.8259 9 23 9 23ZM9 12.9375C6.51472 12.9375 4.5 11.0067 4.5 8.625C4.5 6.24328 6.51472 4.3125 9 4.3125C11.4853 4.3125 13.5 6.24328 13.5 8.625C13.5 11.0067 11.4853 12.9375 9 12.9375Z"
+                            fill="#FFD433"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="box">
+                      <div></div>
+                      <div id="map"></div>
+                    </div>
+                    <div class="box">
+                      <label for="title">Category of the place</label>
+
+                      <div class="pb-4 divide">
+                        <div class="select-menu">
+                          <div class="select-btn">
+                            <span class="sBtn-text" data-value="">Room</span>
+                            <img src="img/svg/Chevron.svg" alt="" />
+                          </div>
+                          <ul class="options">
+                            <li class="option">
+                              <span class="option-text">Room</span>
+                            </li>
+                            <li class="option">
+                              <span class="option-text">Roommate</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box">
+                      <label for="photos">photos of apartment</label>
+                      <div class="pb-4 divide">
+                        <input type="file" id="photos" class="photo-input" />
+                        <label for="photos" class="upload-photo">
+                          <div class="add-plus">
+                            <img src="img/svg/plus-icon.svg" alt="" />
+                          </div>
+                          <img src="img/svg/camera.svg" alt="" />
+                          <p class="upload-text">Upload photos</p>
+                          <p>
+                            just tab here to browse your gallery to uploud photo
+                          </p>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="box">
+                      <label for="title">More info</label>
+                      <div>
+                        <div class="prefer">
+                          <p>Number of people who live with you</p>
+                          <div class="prefer-people">
+                            <button class="decrement-btn" type="button">
+                              -
+                            </button>
+                            <span class="number">2</span>
+                            <button class="increment-btn" type="button">
+                              +
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="amenities">
+                          <p>Place amenities</p>
+                          <div class="amenities-grid">
+                            <div class="lookfor-check">
+                              <input type="checkbox" id="wifi" />
+                              <label for="wifi"
+                                ><span class="custom-radio-2"></span> Wi-Fi
+                              </label>
+                            </div>
+                            <div class="lookfor-check">
+                              <input type="checkbox" id="parking" checked />
+                              <label for="parking"
+                                ><span class="custom-radio-2"></span> Parking
+                              </label>
+                            </div>
+                            <div class="lookfor-check">
+                              <input type="checkbox" id="television" checked />
+                              <label for="television"
+                                ><span class="custom-radio-2"></span>Television
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="btn--primary post-btn">Post</button>
+                  </form>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="need-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="need-tab"
+                  tabindex="0"
+                >
+                  <form class="ad-form">
+                    <div class="box">
+                      <label for="title">Title</label>
+                      <div class="pb-4 divide">
+                        <input
+                          type="text"
+                          class="ad-input"
+                          value="Hi there, I'm looking for roommate and apartment!"
+                        />
+                      </div>
+                    </div>
+                    <div class="box">
+                      <label for="title">Address</label>
+                      <div class="select-wrapper pb-4 divide">
+                        <div>
+                          <label for="emirate">Emirate</label>
+                          <div class="select-menu">
+                            <div class="select-btn">
+                              <span class="sBtn-text" data-value="">Dubai</span>
+                              <img src="img/svg/Chevron.svg" alt="" />
+                            </div>
+                            <ul class="options">
+                              <li class="option">
+                                <span class="option-text">Dubai</span>
+                              </li>
+                              <li class="option">
+                                <span class="option-text">Ajman</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div>
+                          <label for="emirate">City</label>
+                          <div class="select-menu">
+                            <div class="select-btn">
+                              <span class="sBtn-text" data-value=""
+                                >Al Wasel</span
+                              >
+                              <img src="img/svg/Chevron.svg" alt="" />
+                            </div>
+                            <ul class="options">
+                              <li class="option">
+                                <span class="option-text">Al Wasel</span>
+                              </li>
+                              <li class="option">
+                                <span class="option-text">Ajman</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="box">
+                      <label for="title">I’m looking for</label>
+
+                      <div class="pb-4 divide">
+                        <div class="select-menu">
+                          <div class="select-btn">
+                            <span class="sBtn-text" data-value="">Room</span>
+                            <img src="img/svg/Chevron.svg" alt="" />
+                          </div>
+                          <ul class="options">
+                            <li class="option">
+                              <span class="option-text">Room</span>
+                            </li>
+                            <li class="option">
+                              <span class="option-text">Roommate</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="box">
+                      <label for="title">Price range</label>
+                      <div>
+                        <p class="monthly-price-text">
+                          Monthly prices before fees and taxes
+                        </p>
+                        <div>
+                          <div>
+                            <img
+                              src="img/price-range.png"
+                              alt=""
+                              class="price-img"
+                            />
+                          </div>
+                          <div class="double-slider-box">
+                            <div class="range-slider">
+                              <div class="slider-track"></div>
+                              <input
+                                type="range"
+                                name="min-val"
+                                min="300"
+                                max="30000"
+                                class="min-val"
+                                value="0"
+                                oninput="slideMin()"
+                              />
+                              <input
+                                type="range"
+                                name="max-val"
+                                min="300"
+                                max="30000"
+                                class="max-val"
+                                value="3500"
+                                oninput="slideMax()"
+                              />
+                            </div>
+
+                            <div class="input-box">
+                              <div class="min-box">
+                                <label>Minumum</label>
+                                <div class="price-input">
+                                  <input
+                                    type="text"
+                                    name="min-input"
+                                    class="input-field min-input form-control"
+                                    onchange="setMinInput()"
+                                  />
+                                  <span class="">$</span>
+                                </div>
+                              </div>
+                              <div class="max-box">
+                                <label>Maximun</label>
+                                <div class="price-input">
+                                  <input
+                                    type="text"
+                                    name="max-input"
+                                    class="input-field max-input form-control"
+                                    onchange="setMaxInput()"
+                                  />
+                                  <span class="">$</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="box">
+                      <label for="title">More info</label>
+                      <div>
+                        <div class="prefer">
+                          <p>Number of people who live with you</p>
+                          <div class="prefer-people">
+                            <button class="decrement-btn" type="button">
+                              -
+                            </button>
+                            <span class="number">2</span>
+                            <button class="increment-btn" type="button">
+                              +
+                            </button>
+                          </div>
+                        </div>
+                        <div class="prefer">
+                          <p>Number of people prefer to live with</p>
+                          <div class="prefer-people">
+                            <button class="decrement-btn" type="button">
+                              -
+                            </button>
+                            <span class="number">3</span>
+                            <button class="increment-btn" type="button">
+                              +
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="amenities">
+                          <p>Place amenities</p>
+                          <div class="amenities-grid">
+                            <div class="lookfor-check">
+                              <input type="checkbox" id="wifi" />
+                              <label for="wifi"
+                                ><span class="custom-radio-2"></span> Wi-Fi
+                              </label>
+                            </div>
+                            <div class="lookfor-check">
+                              <input type="checkbox" id="parking" checked />
+                              <label for="parking"
+                                ><span class="custom-radio-2"></span> Parking
+                              </label>
+                            </div>
+                            <div class="lookfor-check">
+                              <input type="checkbox" id="television" checked />
+                              <label for="television"
+                                ><span class="custom-radio-2"></span>Television
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="btn--primary post-btn">Post</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg header">
       <div class="container-fluid">
         <a class="navbar-brand" href="homepage.html">
@@ -769,41 +1220,8 @@
 
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
     <script src="lib/swiper js/swiper-bundle.min.js"></script>
+    <script src="lib/leaflet/leaflet.js"></script>
 
-    <script>
-      const heroSwiper = new Swiper(".hero-swiper", {
-        autoplay: {
-          delay: 1500,
-          disableOnInteraction: false,
-        },
-        effect: "fade",
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
-
-      const seekersSwiper = new Swiper(".seekers-swiper", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 2.5,
-            spaceBetween: 25,
-          },
-        },
-      });
-    </script>
+    <script src="js/see-more.js"></script>
   </body>
 </html>

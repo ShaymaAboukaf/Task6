@@ -447,7 +447,9 @@ body {
 }
 
 .add-add-text {
-  margin: 0;
+  border: none;
+  background-color: transparent;
+  color: inherit;
   flex: 1;
 }
 
