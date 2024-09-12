@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="lib/swiper js/swiper-bundle.min.css" />
     <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/notifications.css" />
     <link rel="stylesheet" href="css/shared.css" />
 
     <link rel="stylesheet" href="css/see-more.css" />
@@ -991,54 +990,57 @@
                 </div>
                 <ul class="dropdown-list">
                   <div class="account-type-wrapper">
-                    <p class="account-type-title">Change account type</p>
+                    <a
+                      href="signup.html"
+                      class="account-type-title dropdown-item"
+                      ><span>Change account type</span>
+                    </a>
                     <ul class="dropdown-list account-type">
-                      <li>
-                        <a href="#" class="dropdown-item">
-                          <div class="dropdown-img-box">
-                            <img
-                              src="img/svg/arrow-1.svg"
-                              alt=""
-                              class="arrow-1"
-                            />
-                            <img
-                              src="img/roommate-1.jpg"
-                              alt=""
-                              class="dropdown-item-img"
-                            />
-                            <img
-                              src="img/svg/arrow-2.svg"
-                              alt=""
-                              class="arrow-2"
-                            />
-                          </div>
+                      <li class="dropdown-item">
+                        <div class="dropdown-img-box">
+                          <img
+                            src="img/svg/arrow-1.svg"
+                            alt=""
+                            class="arrow-1"
+                          />
+                          <img
+                            src="img/roommate-1.jpg"
+                            alt=""
+                            class="dropdown-item-img"
+                          />
+                          <img
+                            src="img/svg/arrow-2.svg"
+                            alt=""
+                            class="arrow-2"
+                          />
+                        </div>
 
-                          <h3 class="heading-tertiary">Seeker of room</h3>
-                        </a>
+                        <h3 class="heading-tertiary js-account-type">
+                          Seeker of room
+                        </h3>
                       </li>
-                      <li>
-                        <a href="#" class="dropdown-item">
-                          <div class="dropdown-img-box">
-                            <img
-                              src="img/svg/arrow-1.svg"
-                              alt=""
-                              class="arrow-1"
-                            />
-                            <img
-                              src="img/roommate-1.jpg"
-                              alt=""
-                              class="dropdown-item-img"
-                            />
-                            <img
-                              src="img/svg/arrow-2.svg"
-                              alt=""
-                              class="arrow-2"
-                            />
-                          </div>
-
-                          <h3 class="heading-tertiary">list place only</h3>
-                        </a>
-                      </li>
+                      <!-- <li class="dropdown-item">
+                        <div class="dropdown-img-box">
+                          <img
+                            src="img/svg/arrow-1.svg"
+                            alt=""
+                            class="arrow-1"
+                          />
+                          <img
+                            src="img/roommate-1.jpg"
+                            alt=""
+                            class="dropdown-item-img"
+                          />
+                          <img
+                            src="img/svg/arrow-2.svg"
+                            alt=""
+                            class="arrow-2"
+                          />
+                        </div>
+                        <h3 class="heading-tertiary js-account-type">
+                          list place only
+                        </h3>
+                      </li> -->
                     </ul>
                   </div>
                   <li>
@@ -1546,7 +1548,7 @@
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
     <script src="lib/swiper js/swiper-bundle.min.js"></script>
     <script src="lib/leaflet/leaflet.js"></script>
-
+    <script src="js/main.js"></script>
     <script src="js/see-more.js"></script>
   </body>
 </html>

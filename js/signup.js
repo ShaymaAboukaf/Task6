@@ -9,9 +9,11 @@ const passwordError = document.querySelector(".password-error");
 const firstNameError = document.querySelector(".firstname-error");
 const lastNameError = document.querySelector(".lastname-error");
 
-document.querySelector(".signup-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  validateForm();
+document.querySelectorAll(".signup-form").forEach((form) => {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    validateForm();
+  });
 });
 
 function validateForm() {
@@ -61,15 +63,28 @@ document.querySelectorAll(".required").forEach((input) => {
 
 // Multistep From
 let currentTab = 0;
+let isLogin = localStorage.getItem("isLogin") || false;
+const accountType = localStorage.getItem("account-type") || null;
+
 const tabs = document.getElementsByClassName("tab");
+
+document.querySelectorAll(".next-btn").forEach((btn) => {
+  btn.addEventListener("click", next);
+});
+
+if (isLogin) {
+  currentTab = 1;
+}
+showTab(currentTab);
+
 function showTab(tabNumber) {
   tabs[tabNumber].style.display = "flex";
+  document.querySelector(`#${accountType}`).checked = true;
   fixStepIndicator(tabNumber);
 }
 
 function fixStepIndicator(tabNumber) {
   const steps = document.getElementsByClassName("step");
-  console.log(steps);
   for (let i = 0; i < steps.length; i++) {
     steps[i].className = steps[i].className.replace(" active", "");
     steps[i].className = steps[i].className.replace(" finish", "");
@@ -86,7 +101,17 @@ function fixStepIndicator(tabNumber) {
 
 function next() {
   const tabs = document.getElementsByClassName("tab");
+
+  if (currentTab == tabs.length - 1) {
+    const checked = document.querySelector(".look-chk:checked").value;
+    localStorage.setItem("account-type", checked);
+    localStorage.setItem("isLogin", true);
+    window.location = "see-more.html";
+    return;
+  }
+
   if (!validateForm()) return false;
+
   tabs[currentTab].style.display = "none";
   currentTab++;
   showTab(currentTab);
@@ -98,9 +123,3 @@ function goToTab(tabNumber) {
   currentTab = tabNumber;
   showTab(currentTab);
 }
-
-showTab(currentTab);
-
-document.querySelectorAll(".next-btn").forEach((btn) => {
-  btn.addEventListener("click", next);
-});

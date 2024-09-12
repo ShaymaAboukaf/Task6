@@ -84,7 +84,7 @@
 }
 
 .user-btn--secondary {
-  background-color: #fff;
+  background-color: transparent;
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
 }

@@ -330,7 +330,7 @@
   }
 
   .signup .content-heading {
-    min-height: 30vh;
+    min-height: 35vh;
     flex: 0 0 auto;
   }
 
@@ -344,7 +344,7 @@
 
   .steps {
     flex-direction: row;
-    top: 25%;
+    top: 31%;
     left: 50%;
   }
 

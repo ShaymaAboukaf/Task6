@@ -33,13 +33,13 @@
   align-items: center;
 }
 
-.nav-tabs {
+.notifications .nav-tabs {
   margin-bottom: 2rem;
   padding: 0 2.4rem;
   border: none;
 }
 
-.nav-tabs .nav-link {
+.notifications .nav-tabs .nav-link {
   font-size: 2rem;
   font-weight: 500;
   border-radius: 2rem;
@@ -166,7 +166,7 @@
   background-color: #d9d9d7;
 }
 
-.option-icon {
+.notifications .option-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

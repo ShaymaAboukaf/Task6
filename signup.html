@@ -159,21 +159,40 @@
               <form class="signup-form">
                 <div class="lookfor">
                   <div class="lookfor-check">
-                    <input type="radio" id="roommate" name="lookfor" checked />
-                    <label for="roommate"
+                    <input
+                      type="radio"
+                      value="seeker-roommate"
+                      id="seeker-roommate"
+                      name="lookfor"
+                      class="look-chk"
+                      checked
+                    />
+                    <label for="seeker-roommate"
                       ><span class="custom-radio-2"></span> Seeker of roommate
                     </label>
                   </div>
 
                   <div class="lookfor-check">
-                    <input type="radio" id="room" name="lookfor" />
-                    <label for="room"
+                    <input
+                      type="radio"
+                      value="seeker-room"
+                      id="seeker-room"
+                      name="lookfor"
+                      class="look-chk"
+                    />
+                    <label for="seeker-room"
                       ><span class="custom-radio-2"></span>Seeker of room
                     </label>
                   </div>
 
                   <div class="lookfor-check">
-                    <input type="radio" id="list-place" name="lookfor" />
+                    <input
+                      type="radio"
+                      id="list-place"
+                      value="list-place"
+                      name="lookfor"
+                      class="look-chk"
+                    />
                     <label for="list-place"
                       ><span class="custom-radio-2"></span>I want to list my
                       place only
@@ -181,9 +200,7 @@
                   </div>
                 </div>
                 <div class="d-grid">
-                  <button type="submit" class="btn btn--primary next-btn">
-                    Next
-                  </button>
+                  <button class="btn btn--primary next-btn">Next</button>
                 </div>
               </form>
             </div>
