@@ -635,7 +635,7 @@ input[type="range"]::-moz-slider-thumb {
 .modal-dialog {
   width: 88rem;
 
-  max-width: none;
+  max-width: 100%;
 }
 .modal-body {
   display: flex;

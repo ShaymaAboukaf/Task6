@@ -71,7 +71,7 @@ const tabs = document.getElementsByClassName("tab");
 document.querySelectorAll(".next-btn").forEach((btn) => {
   btn.addEventListener("click", next);
 });
-
+const checkedEl = document.querySelector(`#${accountType}`);
 if (isLogin) {
   currentTab = 1;
 }
@@ -79,7 +79,10 @@ showTab(currentTab);
 
 function showTab(tabNumber) {
   tabs[tabNumber].style.display = "flex";
-  document.querySelector(`#${accountType}`).checked = true;
+  if (checkedEl) {
+    checkedEl.checked = true;
+  }
+
   fixStepIndicator(tabNumber);
 }
 
