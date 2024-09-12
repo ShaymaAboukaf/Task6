@@ -1484,7 +1484,13 @@
           <div class="box">
             <label for="photos">photos of apartment</label>
             <div class="pb-4 divide">
-              <input type="file" id="photos" class="photo-input" />
+              <input
+                type="file"
+                id="photos"
+                class="photo-input"
+                accept="image/*"
+                multiple
+              />
               <label for="photos" class="upload-photo">
                 <div class="add-plus">
                   <img src="img/svg/plus-icon.svg" alt="" />
@@ -1653,14 +1659,17 @@
       });
 
       const minGap = 0;
-      let priceInputMin, priceInputMax, range, sliderMinValue, sliderMaxValue;
+      let priceInputMin,
+        priceInputMax,
+        sliderMinValue,
+        sliderMaxValue,
+        range = document.querySelector(`.slider-track`);
       function initSlider() {
         minVal = document.querySelector(`.min-val`);
         maxVal = document.querySelector(`.max-val`);
         priceInputMin = document.querySelector(`.min-input`);
         priceInputMax = document.querySelector(`.max-input`);
 
-        range = document.querySelector(`.slider-track`);
         sliderMinValue = parseInt(minVal.min);
         sliderMaxValue = parseInt(maxVal.max);
 
@@ -1712,8 +1721,9 @@
         maxVal.value = priceInputMax.value;
         slideMax();
       }
-
-      // initSlider();
+      if (range) {
+        initSlider();
+      }
 
       // Initialize map when the user clicks the input field
       const inputField = document.getElementById("coordinates");
