@@ -37,6 +37,11 @@
   border-radius: 10px;
 }
 
+::selection {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -91,6 +96,11 @@ p {
 
 .heading-tertiary {
   font-size: 2rem;
+}
+
+.subheading {
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 .btn {

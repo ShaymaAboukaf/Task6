@@ -1,0 +1,264 @@
+body {
+  background-image: linear-gradient(#f8f4db, #fffffe);
+}
+
+/* *************************** */
+/* HERO SECTION */
+/* *************************** */
+
+.section-hero {
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: 71.5rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.swiper-pagination-bullets {
+  bottom: 3rem !important;
+}
+
+.swiper-pagination-bullet {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+.swiper-pagination-bullet-active {
+  width: 2rem;
+  background-color: var(--color-primary);
+}
+
+.hero-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 7rem;
+  width: 78rem;
+  max-width: 100%;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  z-index: 10;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: var(--color-grey-light-2);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-grey-light-4);
+  border-radius: 1rem;
+}
+
+.search-icon {
+  width: 2.2rem;
+}
+
+.search-input {
+  flex: 1;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.search-input::placeholder {
+  font-family: inherit;
+  color: var(--color-grey-dark-2);
+}
+
+.search-btn {
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  color: #fff;
+  background-image: var(--gradient-1);
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 2rem;
+  background-color: var(--color-grey-light-5);
+}
+
+/* *************************** */
+/* POPULAR SECTION */
+/* *************************** */
+
+.section-popular {
+  padding-top: 4.8rem;
+}
+
+.popular-swiper {
+  max-width: 112.6rem;
+  margin: 0 auto;
+  width: 100%;
+  height: 35.5rem;
+}
+
+.popular-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.popular-img {
+  width: 100%;
+  height: 20.2rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.popular-name {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-top: 2rem;
+}
+
+.popular-swiper .swiper-button-prev,
+.popular-swiper .swiper-button-next {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary) !important;
+}
+
+.popular-swiper .swiper-button-prev {
+  left: 0;
+}
+
+.popular-swiper .swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+.popular-swiper .swiper-button-disabled {
+  background-color: #aeaeae !important;
+  opacity: 1 !important;
+}
+
+/* *************************** */
+/* RECOMMEND SECTION */
+/* *************************** */
+
+.section-recommend {
+  padding-bottom: 9.6rem;
+}
+
+.section-recommend .heading-secondary {
+  margin-bottom: 1rem;
+}
+
+.recommend-swiper {
+  margin-top: 4.8rem;
+}
+
+.recommend {
+  width: 30.4rem;
+  border-radius: 2rem;
+  background-color: #f2eacc;
+  overflow: hidden;
+}
+
+.img-box {
+  height: 32.8rem;
+}
+
+.recommend-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.recommend-content {
+  padding: 1rem 2rem 3rem 2rem;
+}
+
+.recommend-name {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.price-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.price {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #aeaeae;
+  margin: 0;
+}
+
+.price span {
+  color: var(--color-secondary);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating img {
+  width: 1.7rem;
+}
+
+.rooms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* *************************** */
+/* AVAILABLE SECTION */
+/* *************************** */
+
+@media only screen and (max-width: 31.25rem) {
+  .search {
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 1.8rem;
+  }
+
+  .search-group {
+    gap: 0;
+  }
+}
