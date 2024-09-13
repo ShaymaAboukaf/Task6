@@ -103,6 +103,11 @@ function fixStepIndicator(tabNumber) {
 }
 
 function next() {
+  if (isLogin) {
+    const checked = document.querySelector(".look-chk:checked").value;
+    localStorage.setItem("account-type", checked);
+    window.location = "see-more.html";
+  }
   const tabs = document.getElementsByClassName("tab");
 
   if (currentTab == tabs.length - 1) {
