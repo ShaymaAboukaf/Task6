@@ -37,6 +37,7 @@
 .user-icon {
   width: 2.4rem;
   height: 2.4rem;
+  transition: 0.3s ease-in-out;
 }
 
 .user img {
@@ -72,20 +73,21 @@
   background-color: #f6f6f6;
   box-shadow: var(--shadow-1);
   z-index: 10;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   opacity: 0;
   visibility: hidden;
 }
 
-.dropdown-btn:focus .user-icon {
+.custom-dropdown:hover .user-icon {
   color: var(--color-primary);
+  fill: var(--color-primary);
 }
 
 .active .user-icon {
   fill: var(--color-primary);
 }
 
-.dropdown-btn:focus + .custom-dropdown-menu {
+.custom-dropdown:hover .custom-dropdown-menu {
   opacity: 1;
   visibility: visible;
 }
@@ -395,20 +397,6 @@
   border-radius: 50%;
   background-color: var(--color-primary);
 }
-
-/* .notification-item::after {
-  content: "";
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: #2387c2;
-
-  position: absolute;
-  top: 50%;
-  right: 2rem;
-  transform: translateY(-50%);
-} */
 
 .notification-text span {
   color: #707070;
