@@ -1,0 +1,402 @@
+.container {
+  padding: 0;
+}
+
+.chat-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 7rem;
+  background-color: #f2eacc;
+}
+
+.chats {
+  padding: 2rem 0;
+  background-color: #f2eacc;
+  flex: 0 0 25%;
+  transition: 0.5s;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.4rem;
+  padding: 0 1.5rem;
+}
+
+.header-title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.icons button {
+  width: 3.6rem;
+  height: 3.6rem;
+  display: inline-block;
+  border-radius: 50%;
+  border: none;
+  background-color: #d3ceba;
+}
+
+.icons svg {
+  width: 2.4rem;
+}
+
+.chat-search {
+  margin-bottom: 2.4rem;
+  padding: 0 1.5rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #e1dabf;
+  border-radius: 2rem;
+  padding: 1.1rem 1.5rem;
+}
+
+.search svg {
+  width: 1.6rem;
+}
+
+.input-search {
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-family: inherit;
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.input-control::placeholder {
+  color: #707070;
+}
+
+.chat-item {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chat-item.active {
+  background-color: #e7ddb7;
+}
+
+.chat-img {
+  width: 5.8rem;
+  height: 5.8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+.user-name {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.user-text {
+  margin: 0;
+}
+
+.chat-time {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.conversation {
+  position: relative;
+  flex: 0 0 50%;
+  background-color: #fff;
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #c9c9c9;
+  position: relative;
+}
+
+.conversation-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.img-box {
+  position: relative;
+}
+
+.img-box::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  right: 5px;
+  bottom: 2px;
+  background-color: #158a20;
+}
+
+.friend-img {
+  width: 5.8rem;
+  height: 5.8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.username {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.active-now {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #5f6368;
+  margin: 0;
+}
+
+.call-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.call-btn img {
+  width: 2.4rem;
+}
+
+.typing-container {
+  padding: 1rem;
+  overflow: auto;
+  height: 70%;
+}
+
+.person-type {
+  margin: 1rem 0;
+}
+
+.type-text {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 2rem;
+  max-width: 39rem;
+  width: 75%;
+  background-color: #e8e6db;
+  border-radius: 20px 20px 20px 0;
+}
+
+.type-time {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #707070;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.type-text-2 {
+  background-color: #c4e4f6;
+  margin-left: auto;
+}
+
+.type-time-2 {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.check {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background-color: #707070;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check svg {
+  width: 1.4rem;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 39rem;
+  margin-left: auto;
+  background-color: #c4e4f6;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.photos img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.typing {
+  position: absolute;
+  left: 0;
+  bottom: 2rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.typing button {
+  border: none;
+  background-color: transparent;
+}
+
+.attach-btn img {
+  width: 2.4rem;
+}
+
+.typing-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.typing-group {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  width: 53.8rem;
+  max-width: 100%;
+}
+
+.typing-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.send-btn {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(35, 135, 194, 0.46) !important;
+}
+
+.profile {
+  padding: 4.8rem 0;
+  text-align: center;
+  flex: 0 0 25%;
+  position: relative;
+}
+
+.profile-img {
+  width: 10.4rem;
+  height: 10.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 1.4rem;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 4.8rem;
+}
+
+.profile-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.profile-icons p {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.profile-btn {
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+  background-color: #d3ceba;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  border: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: none;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+  right: 12%;
+}
+
+.line {
+  width: 2.5rem;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 5px;
+}
+
+.chats.active {
+  transform: translateX(0);
+}
+
+@media (max-width: 1200px) {
+  .chats {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 32rem;
+    height: 100%;
+    transform: translateX(-100%);
+    background-color: #fff;
+    z-index: 1000;
+  }
+
+  .conversation {
+    flex: 0 0 75%;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+@media (max-width: 550px) {
+  .conversation {
+    flex: 0 0 100%;
+  }
+  .profile {
+    display: none;
+  }
+}

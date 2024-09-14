@@ -109,6 +109,36 @@ body {
 
 .section-popular {
   padding-top: 4.8rem;
+  position: relative;
+}
+
+.wavy-lines {
+  position: absolute;
+  top: 11rem;
+  right: 2rem;
+}
+
+.section-popular::before,
+.section-popular::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transform: translateX(-50%);
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index: -1;
+}
+
+.section-popular::before {
+  top: 11rem;
+  border: 4rem solid rgba(255, 212, 51, 0.2);
+}
+
+.section-popular::after {
+  top: 20rem;
+  border: 4rem solid rgba(35, 135, 194, 0.2);
 }
 
 .popular-swiper {
@@ -264,6 +294,17 @@ body {
 
 .section-available {
   padding-bottom: 3.2rem;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-30%, -50%);
+  width: 24rem;
+  height: 24rem;
+  z-index: -1;
 }
 
 .available-wrapper {
@@ -303,11 +344,6 @@ body {
   border-radius: 2rem;
   position: relative;
   transition: all 0.5s ease;
-}
-
-.available-wrapper .swiper-slide.active {
-  width: 41.3rem !important;
-  max-width: 100%;
 }
 
 .swiper-slide .slide_1 {
