@@ -13,35 +13,74 @@ const heroSwiper = new Swiper(".hero-swiper", {
 // POPULAR SLIDER
 const popularSwiper = new Swiper(".popular-swiper", {
   speed: 1000,
-  slidesPerView: 1.3,
+  slidesPerView: 1,
+  spaceBetween: 10,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-    600: {
-      slidesPerView: 2.5,
+    500: {
+      slidesPerView: 2,
+      spaceBetween: 20,
     },
-    900: {
+    700: {
       slidesPerView: 3,
+      spaceBetween: 40,
     },
   },
 });
 
 // RECOMMEND SLIDER
-
 const recommendSwiper = new Swiper(".recommend-swiper", {
   slidesPerView: 1.2,
-  spaceBetween: 20,
+  spaceBetween: 12,
+
   breakpoints: {
-    500: {
-      slidesPerView: 2,
+    400: {
+      slidesPerView: 1.5,
+      spaceBetween: 15,
     },
-    700: {
-      slidesPerView: 3,
+    600: {
+      slidesPerView: 2.5,
+      spaceBetween: 25,
     },
-    1000: {
+
+    900: {
       slidesPerView: 3.5,
+      spaceBetween: 35,
     },
   },
+});
+
+// AVAILABLE SLIDER
+const availableSwiper = new Swiper(".available-swiper", {
+  slidesPerView: 2,
+  spaceBetween: 15,
+
+  breakpoints: {
+    550: {
+      slidesPerView: 3.5,
+      spaceBetween: 30,
+    },
+    900: {
+      slidesPerView: 5,
+      spaceBetween: 15,
+    },
+  },
+});
+
+function removeActiveClass() {
+  document
+    .querySelectorAll(" .available-swiper .swiper-slide")
+    .forEach((item) => {
+      item.classList.remove("active");
+    });
+}
+
+document.querySelectorAll(".available-swiper .swiper-slide").forEach((item) => {
+  item.addEventListener("click", function (e) {
+    removeActiveClass();
+    e.target.classList.add("active");
+  });
 });
