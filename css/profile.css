@@ -7,7 +7,7 @@ html {
 }
 
 .profile-wrapper {
-  background-image: linear-gradient(#f8f4db, #fffffe);
+  background-image: linear-gradient(to bottom, #f8f4db, #fffffe);
 }
 
 .profile-container {

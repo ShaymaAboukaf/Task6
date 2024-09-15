@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/shared.css" />
-    <link rel="stylesheet" href="css/profile.css" />
-    <title>Profile</title>
+
+    <link rel="stylesheet" href="css/my-ad.css" />
+    <title>Recent</title>
   </head>
   <body>
+    <div class="add-add">
+      <div class="plus-icon"><p class="plus">+</p></div>
+      <a href="add-ad.html" class="add-add-text"> Add ad </a>
+    </div>
     <nav class="navbar navbar-expand-lg header">
       <div class="container-fluid">
         <a class="navbar-brand" href="homepage.html">
@@ -36,12 +40,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="homepage.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="homepage.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="see-more.html">See more</a>
+              <a class="nav-link" href="see-more.html">See more</a>
             </li>
           </ul>
           <div class="user-nav">
@@ -636,350 +643,303 @@
       </div>
     </nav>
     <div class="container">
-      <div class="profile-bg"></div>
-      <div class="profile-wrapper">
-        <div class="profile-details profile-container">
-          <img src="img/roommate-1.jpg" alt="" class="profile-img" />
-          <div class="profile-tabs">
-            <a href="#about" class="profile-tab active">About</a>
-            <a href="#contact" class="profile-tab">Contact info</a>
-            <a href="#ads" class="profile-tab">Advertisements</a>
+      <div class="wrapper">
+        <form class="search-box">
+          <div class="search-input">
+            <input type="text" value="Dubai" />
+            <img src="img/svg/x-circle.svg" alt="" />
           </div>
-          <aside class="profile-info">
-            <div class="overview">
-              <p class="username">Raneem Doghouz</p>
-              <div class="rating">
-                <img src="img/svg/full-star.svg" alt="" />
-                <span>4.5</span>
-              </div>
-            </div>
-            <p class="user-nationality">Syrian</p>
-            <p class="user-about">
-              Hi there, I am Raneem. I recently moved to Dubai for working and
-              looking for a roommate
-            </p>
+          <button class="btn--primary">Search</button>
+        </form>
+        <div class="favorite-container">
+          <div class="favorite-header">
+            <h4 class="favorite-title">My advertisements</h4>
 
-            <div class="d-grid">
-              <a href="#" class="user-btn user-btn--primary mb-4"
-                >Edit Profile info</a
+            <button class="option-icon">
+              <img src="img/svg/dropdown-icon-2.svg" alt="" />
+            </button>
+          </div>
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="act-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#act-tab-pane"
+                type="button"
+                role="tab"
+                aria-controls="act-tab-pane"
+                aria-selected="true"
               >
-            </div>
-
-            <div class="d-grid">
-              <a href="add-ad.html" class="user-btn user-btn--secondary"
-                >Add ad</a
+                Active ads
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pending-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#pending-tab-pane"
+                type="button"
+                role="tab"
+                aria-controls="pending-tab-pane"
+                aria-selected="false"
               >
-            </div>
+                Pending ads
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="disapproved-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#disapproved-tab-pane"
+                type="button"
+                role="tab"
+                aria-controls="disapproved-tab-pane"
+                aria-selected="false"
+              >
+                Disapproved ads
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="expired-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#expired-tab-pane"
+                type="button"
+                role="tab"
+                aria-controls="expired-tab-pane"
+                aria-selected="false"
+              >
+                Expired ads
+              </button>
+            </li>
+          </ul>
 
-            <div class="about" id="about">
-              <h3 class="heading-tertiary">About</h3>
-              <div class="about-item">
-                <svg
-                  width="17"
-                  height="22"
-                  viewBox="0 0 17 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="about-icon"
-                >
-                  <path
-                    d="M8.5 22C8.5 22 17 14.1813 17 8.25C17 3.69365 13.1944 0 8.5 0C3.80558 0 0 3.69365 0 8.25C0 14.1813 8.5 22 8.5 22ZM8.5 12.375C6.1528 12.375 4.25 10.5282 4.25 8.25C4.25 5.97183 6.1528 4.125 8.5 4.125C10.8472 4.125 12.75 5.97183 12.75 8.25C12.75 10.5282 10.8472 12.375 8.5 12.375Z"
-                    fill="#035781"
-                  />
-                </svg>
-
-                <span>Dubai, Al Aweer </span>
-              </div>
-              <div class="about-item">
-                <svg
-                  width="23"
-                  height="23"
-                  viewBox="0 0 23 23"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="about-icon"
-                >
-                  <path
-                    d="M1.91667 23C1.91667 23 0 23 0 21.0833C0 19.1667 1.91667 13.4167 11.5 13.4167C21.0833 13.4167 23 19.1667 23 21.0833C23 23 21.0833 23 21.0833 23H1.91667Z"
-                    fill="#035781"
-                  />
-                  <path
-                    d="M11.5 11.5C14.6756 11.5 17.25 8.92564 17.25 5.75C17.25 2.57436 14.6756 0 11.5 0C8.32436 0 5.75 2.57436 5.75 5.75C5.75 8.92564 8.32436 11.5 11.5 11.5Z"
-                    fill="#035781"
-                  />
-                </svg>
-
-                <span>Male</span>
-              </div>
-              <div class="about-item">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 30 30"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="about-icon"
-                >
-                  <path
-                    d="M5 27.5C4.64583 27.5 4.34896 27.3802 4.10938 27.1406C3.86979 26.901 3.75 26.6042 3.75 26.25V20C3.75 19.3125 3.99479 18.724 4.48438 18.2344C4.97396 17.7448 5.5625 17.5 6.25 17.5V12.5C6.25 11.8125 6.49479 11.224 6.98438 10.7344C7.47396 10.2448 8.0625 10 8.75 10H13.75V8.1875C13.375 7.9375 13.0729 7.63542 12.8438 7.28125C12.6146 6.92708 12.5 6.5 12.5 6C12.5 5.6875 12.5625 5.38021 12.6875 5.07812C12.8125 4.77604 13 4.5 13.25 4.25L15 2.5L16.75 4.25C17 4.5 17.1875 4.77604 17.3125 5.07812C17.4375 5.38021 17.5 5.6875 17.5 6C17.5 6.5 17.3854 6.92708 17.1562 7.28125C16.9271 7.63542 16.625 7.9375 16.25 8.1875V10H21.25C21.9375 10 22.526 10.2448 23.0156 10.7344C23.5052 11.224 23.75 11.8125 23.75 12.5V17.5C24.4375 17.5 25.026 17.7448 25.5156 18.2344C26.0052 18.724 26.25 19.3125 26.25 20V26.25C26.25 26.6042 26.1302 26.901 25.8906 27.1406C25.651 27.3802 25.3542 27.5 25 27.5H5ZM8.75 17.5H21.25V12.5H8.75V17.5ZM6.25 25H23.75V20H6.25V25Z"
-                    fill="#035781"
-                  />
-                </svg>
-
-                <span>June 3 , 1993</span>
-              </div>
-            </div>
-
-            <div class="user-contact" id="contact">
-              <h3 class="heading-tertiary">Contact</h3>
-              <li class="contact-item">
-                <a href="mailto:Raneem.doghouz@gmail.com" class="contact-link">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.0743781 5.33316C0.377595 3.99726 1.57234 3 3 3H21C22.4277 3 23.6224 3.99725 23.9256 5.33316L12 12.621L0.0743781 5.33316ZM0 7.04563V17.7009L8.70479 12.3652L0 7.04563ZM10.1421 13.2436L0.287807 19.2838C0.768906 20.2984 1.80252 21 3 21H21C22.1975 21 23.2311 20.2984 23.7122 19.2838L13.8579 13.2436L12 14.379L10.1421 13.2436ZM15.2952 12.3652L24 17.7009V7.04563L15.2952 12.3652Z"
-                      fill="#292C2D"
-                    />
-                  </svg>
-
-                  <span>Raneem.doghouz@gmail.com</span>
-                </a>
-              </li>
-              <li class="contact-item">
-                <a href="tel:+971 586 834 566" class="contact-link">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M2.82716 0.766614C3.94033 -0.346558 5.77724 -0.232196 6.74375 1.01045L9.4343 4.46974C9.92805 5.10456 10.1025 5.93113 9.90747 6.71134L9.08657 9.99494C8.99991 10.3416 9.10148 10.7083 9.35415 10.961L13.039 14.6459C13.2917 14.8985 13.6584 15.0001 14.0051 14.9134L17.2887 14.0925C18.0689 13.8975 18.8954 14.072 19.5303 14.5657L22.9895 17.2563C24.2322 18.2228 24.3466 20.0597 23.2334 21.1728L21.6825 22.7237C20.5729 23.8333 18.9133 24.3205 17.3666 23.7767C13.5263 22.4266 9.92158 20.2161 6.85273 17.1473C3.78389 14.0784 1.57342 10.4737 0.223257 6.63337C-0.320524 5.08669 0.166695 3.42708 1.27627 2.3175L2.82716 0.766614Z"
-                      fill="#292C2D"
-                    />
-                  </svg>
-
-                  <span>+971 586 834 566</span>
-                </a>
-              </li>
-            </div>
-          </aside>
-          <main class="profile-ads">
-            <h3 class="ads-heading">Raneem’s Advertisements</h3>
-            <div class="ads" id="ads">
-              <div class="ad-box">
-                <div class="ad-header">
-                  <div class="ad-user">
-                    <img
-                      src="img/roommate-1.jpg"
-                      alt=""
-                      class="ad-author-img"
-                    />
-                    <p class="ad-author-name">Raneem Doghouz</p>
-                  </div>
-                  <button>
-                    <svg
-                      width="4"
-                      height="20"
-                      viewBox="0 0 4 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="ad-header-icon"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 3.99714C2.35181 3.99714 2.73142 3.87992 3.05432 3.66032C3.37721 3.44071 3.62887 3.12858 3.77748 2.76339C3.92609 2.3982 3.96497 1.99635 3.88921 1.60867C3.81345 1.22098 3.62645 0.864873 3.35185 0.585368C3.07726 0.305863 2.7274 0.115518 2.34652 0.0384028C1.96565 -0.0387124 1.57086 0.000865942 1.21208 0.152133C0.853305 0.3034 0.546653 0.559561 0.330904 0.888224C0.115156 1.21689 0 1.60329 0 1.99857C0 2.52862 0.206865 3.03697 0.575087 3.41177C0.943309 3.78657 1.44273 3.99714 1.96347 3.99714Z"
-                        fill="#292C2D"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 11.9908C2.35181 11.9908 2.73142 11.8736 3.05432 11.654C3.37721 11.4344 3.62887 11.1222 3.77748 10.757C3.92609 10.3918 3.96497 9.99 3.88921 9.60232C3.81345 9.21464 3.62645 8.85853 3.35185 8.57902C3.07726 8.29952 2.7274 8.10917 2.34652 8.03206C1.96565 7.95494 1.57086 7.99452 1.21208 8.14579C0.853305 8.29705 0.546653 8.55321 0.330904 8.88188C0.115156 9.21054 0 9.59694 0 9.99222C0 10.5223 0.206865 11.0306 0.575087 11.4054C0.943309 11.7802 1.44273 11.9908 1.96347 11.9908Z"
-                        fill="#292C2D"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 19.9849C2.35181 19.9849 2.73142 19.8677 3.05432 19.6481C3.37721 19.4285 3.62887 19.1164 3.77748 18.7512C3.92609 18.386 3.96497 17.9841 3.88921 17.5965C3.81345 17.2088 3.62645 16.8527 3.35185 16.5732C3.07726 16.2937 2.7274 16.1033 2.34652 16.0262C1.96565 15.9491 1.57086 15.9887 1.21208 16.1399C0.853305 16.2912 0.546653 16.5474 0.330904 16.876C0.115156 17.2047 0 17.5911 0 17.9864C0 18.5164 0.206865 19.0248 0.575087 19.3996C0.943309 19.7744 1.44273 19.9849 1.96347 19.9849Z"
-                        fill="#292C2D"
-                      />
-                    </svg>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="act-tab-pane"
+              role="tabpanel"
+              aria-labelledby="act-tab"
+              tabindex="0"
+            >
+              <div class="favorite-list">
+                <div class="favorite-item">
+                  <button class="option-icon">
+                    <img src="img/svg/dropdown-icon-2.svg" alt="" />
                   </button>
-                </div>
 
-                <div class="ad-imgs">
-                  <div class="ad-img-box">
+                  <div class="favorite-img">
                     <img src="img/room-1.jpg" alt="" />
                   </div>
-                  <div class="ad-img-box">
-                    <img src="img/room-2.jpg" alt="" />
+                  <div class="favorite-content">
+                    <div class="favorite-heading">
+                      <h3 class="heading-tertiary">Shared bedroom, Sharjah</h3>
+                    </div>
+
+                    <p class="price"><span>$ 600</span> /month</p>
+
+                    <div class="rooms">
+                      <div>
+                        <img src="img/svg/bed.svg" alt="" class="room-icon" />
+                        <span>2 Bedroom</span>
+                      </div>
+                      <div>
+                        <img
+                          src="img/svg/bathtub.svg"
+                          alt=""
+                          class="room-icon"
+                        />
+                        <span>1 Bathroom</span>
+                      </div>
+                    </div>
+
+                    <div class="status status--active">
+                      <img src="img/svg/active.svg" alt="" />
+                      <span>Active</span>
+                    </div>
                   </div>
                 </div>
 
-                <p class="ad-text">
-                  Hi there, I have apartment and I'm looking for roommate!
-                </p>
-                <p class="author-city">Dubai, Al Aweer</p>
-
-                <div class="ad-btns">
-                  <button>
-                    <img src="img/svg/heart-fill.svg" alt="" />
-                    <span>Favorite</span>
+                <div class="favorite-item">
+                  <button class="option-icon">
+                    <img src="img/svg/dropdown-icon-2.svg" alt="" />
                   </button>
-                  <button>
-                    <img src="img/svg/message-icon.svg" alt="" />
-                    <span>Message</span>
-                  </button>
-                </div>
-              </div>
-              <div class="ad-box">
-                <div class="ad-header">
-                  <div class="ad-user">
-                    <img
-                      src="img/roommate-1.jpg"
-                      alt=""
-                      class="ad-author-img"
-                    />
-                    <p class="ad-author-name">Raneem Doghouz</p>
+                  <div class="favorite-img favorite-img--roommate">
+                    <img src="img/roommate-2.jpg" alt="" />
                   </div>
-                  <button>
-                    <svg
-                      width="4"
-                      height="20"
-                      viewBox="0 0 4 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="ad-header-icon"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 3.99714C2.35181 3.99714 2.73142 3.87992 3.05432 3.66032C3.37721 3.44071 3.62887 3.12858 3.77748 2.76339C3.92609 2.3982 3.96497 1.99635 3.88921 1.60867C3.81345 1.22098 3.62645 0.864873 3.35185 0.585368C3.07726 0.305863 2.7274 0.115518 2.34652 0.0384028C1.96565 -0.0387124 1.57086 0.000865942 1.21208 0.152133C0.853305 0.3034 0.546653 0.559561 0.330904 0.888224C0.115156 1.21689 0 1.60329 0 1.99857C0 2.52862 0.206865 3.03697 0.575087 3.41177C0.943309 3.78657 1.44273 3.99714 1.96347 3.99714Z"
-                        fill="#292C2D"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 11.9908C2.35181 11.9908 2.73142 11.8736 3.05432 11.654C3.37721 11.4344 3.62887 11.1222 3.77748 10.757C3.92609 10.3918 3.96497 9.99 3.88921 9.60232C3.81345 9.21464 3.62645 8.85853 3.35185 8.57902C3.07726 8.29952 2.7274 8.10917 2.34652 8.03206C1.96565 7.95494 1.57086 7.99452 1.21208 8.14579C0.853305 8.29705 0.546653 8.55321 0.330904 8.88188C0.115156 9.21054 0 9.59694 0 9.99222C0 10.5223 0.206865 11.0306 0.575087 11.4054C0.943309 11.7802 1.44273 11.9908 1.96347 11.9908Z"
-                        fill="#292C2D"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 19.9849C2.35181 19.9849 2.73142 19.8677 3.05432 19.6481C3.37721 19.4285 3.62887 19.1164 3.77748 18.7512C3.92609 18.386 3.96497 17.9841 3.88921 17.5965C3.81345 17.2088 3.62645 16.8527 3.35185 16.5732C3.07726 16.2937 2.7274 16.1033 2.34652 16.0262C1.96565 15.9491 1.57086 15.9887 1.21208 16.1399C0.853305 16.2912 0.546653 16.5474 0.330904 16.876C0.115156 17.2047 0 17.5911 0 17.9864C0 18.5164 0.206865 19.0248 0.575087 19.3996C0.943309 19.7744 1.44273 19.9849 1.96347 19.9849Z"
-                        fill="#292C2D"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                  <div class="favorite-content">
+                    <div class="favorite-heading">
+                      <h3 class="heading-tertiary">
+                        Hi there, I'm looking for apartment!
+                      </h3>
+                    </div>
 
-                <div class="ad-imgs">
-                  <div class="ad-img-box">
-                    <img src="img/room-3.jpg" alt="" />
+                    <p class="roommate-text">I prefer it to be sunny.</p>
+                    <div class="status status--active">
+                      <img src="img/svg/active.svg" alt="" />
+                      <span>Active</span>
+                    </div>
                   </div>
-                </div>
-
-                <p class="ad-text">
-                  Hi there, I have apartment and I'm looking for roommate!
-                </p>
-                <p class="author-city">Dubai, Al Aweer</p>
-
-                <div class="ad-btns">
-                  <button>
-                    <img src="img/svg/heart-fill.svg" alt="" />
-                    <span>Favorite</span>
-                  </button>
-                  <button>
-                    <img src="img/svg/message-icon.svg" alt="" />
-                    <span>Message</span>
-                  </button>
-                </div>
-              </div>
-              <div class="ad-box">
-                <div class="ad-header">
-                  <div class="ad-user">
-                    <img
-                      src="img/roommate-1.jpg"
-                      alt=""
-                      class="ad-author-img"
-                    />
-                    <p class="ad-author-name">Raneem Doghouz</p>
-                  </div>
-                  <button>
-                    <svg
-                      width="4"
-                      height="20"
-                      viewBox="0 0 4 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="ad-header-icon"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 3.99714C2.35181 3.99714 2.73142 3.87992 3.05432 3.66032C3.37721 3.44071 3.62887 3.12858 3.77748 2.76339C3.92609 2.3982 3.96497 1.99635 3.88921 1.60867C3.81345 1.22098 3.62645 0.864873 3.35185 0.585368C3.07726 0.305863 2.7274 0.115518 2.34652 0.0384028C1.96565 -0.0387124 1.57086 0.000865942 1.21208 0.152133C0.853305 0.3034 0.546653 0.559561 0.330904 0.888224C0.115156 1.21689 0 1.60329 0 1.99857C0 2.52862 0.206865 3.03697 0.575087 3.41177C0.943309 3.78657 1.44273 3.99714 1.96347 3.99714Z"
-                        fill="#292C2D"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 11.9908C2.35181 11.9908 2.73142 11.8736 3.05432 11.654C3.37721 11.4344 3.62887 11.1222 3.77748 10.757C3.92609 10.3918 3.96497 9.99 3.88921 9.60232C3.81345 9.21464 3.62645 8.85853 3.35185 8.57902C3.07726 8.29952 2.7274 8.10917 2.34652 8.03206C1.96565 7.95494 1.57086 7.99452 1.21208 8.14579C0.853305 8.29705 0.546653 8.55321 0.330904 8.88188C0.115156 9.21054 0 9.59694 0 9.99222C0 10.5223 0.206865 11.0306 0.575087 11.4054C0.943309 11.7802 1.44273 11.9908 1.96347 11.9908Z"
-                        fill="#292C2D"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.96347 19.9849C2.35181 19.9849 2.73142 19.8677 3.05432 19.6481C3.37721 19.4285 3.62887 19.1164 3.77748 18.7512C3.92609 18.386 3.96497 17.9841 3.88921 17.5965C3.81345 17.2088 3.62645 16.8527 3.35185 16.5732C3.07726 16.2937 2.7274 16.1033 2.34652 16.0262C1.96565 15.9491 1.57086 15.9887 1.21208 16.1399C0.853305 16.2912 0.546653 16.5474 0.330904 16.876C0.115156 17.2047 0 17.5911 0 17.9864C0 18.5164 0.206865 19.0248 0.575087 19.3996C0.943309 19.7744 1.44273 19.9849 1.96347 19.9849Z"
-                        fill="#292C2D"
-                      />
-                    </svg>
-                  </button>
-                </div>
-
-                <p class="ad-text">
-                  Hi there, I have apartment and I'm looking for roommate!
-                </p>
-                <p class="author-city">Dubai, Al Aweer</p>
-
-                <div class="ad-btns">
-                  <button>
-                    <img src="img/svg/heart-fill.svg" alt="" />
-                    <span>Favorite</span>
-                  </button>
-                  <button>
-                    <img src="img/svg/message-icon.svg" alt="" />
-                    <span>Message</span>
-                  </button>
                 </div>
               </div>
             </div>
-          </main>
+            <div
+              class="tab-pane fade"
+              id="pending-tab-pane"
+              role="tabpanel"
+              aria-labelledby="pending-tab"
+              tabindex="0"
+            >
+              <div class="favorite-list">
+                <div class="favorite-item">
+                  <button class="option-icon">
+                    <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                  </button>
+
+                  <div class="favorite-img">
+                    <img src="img/room-1.jpg" alt="" />
+                  </div>
+                  <div class="favorite-content">
+                    <div class="favorite-heading">
+                      <h3 class="heading-tertiary">Shared bedroom, Sharjah</h3>
+                    </div>
+
+                    <p class="price"><span>$ 600</span> /month</p>
+
+                    <div class="rooms">
+                      <div>
+                        <img src="img/svg/bed.svg" alt="" class="room-icon" />
+                        <span>2 Bedroom</span>
+                      </div>
+                      <div>
+                        <img
+                          src="img/svg/bathtub.svg"
+                          alt=""
+                          class="room-icon"
+                        />
+                        <span>1 Bathroom</span>
+                      </div>
+                    </div>
+
+                    <div class="status status--pending">
+                      <img src="img/svg/pending.svg" alt="" />
+                      <span>Pending</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="favorite-item">
+                  <button class="option-icon">
+                    <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                  </button>
+                  <div class="favorite-img favorite-img--roommate">
+                    <img src="img/roommate-2.jpg" alt="" />
+                  </div>
+                  <div class="favorite-content">
+                    <div class="favorite-heading">
+                      <h3 class="heading-tertiary">
+                        Hi there, I'm looking for apartment!
+                      </h3>
+                    </div>
+
+                    <p class="roommate-text">I prefer it to be sunny.</p>
+                    <div class="status status--pending">
+                      <img src="img/svg/pending.svg" alt="" />
+                      <span>Pending</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="disapproved-tab-pane"
+              role="tabpanel"
+              aria-labelledby="disapproved-tab"
+              tabindex="0"
+            >
+              <div class="favorite-list">
+                <div class="favorite-item">
+                  <button class="option-icon">
+                    <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                  </button>
+
+                  <div class="favorite-img">
+                    <img src="img/room-1.jpg" alt="" />
+                  </div>
+                  <div class="favorite-content">
+                    <div class="favorite-heading">
+                      <h3 class="heading-tertiary">Shared bedroom, Sharjah</h3>
+                    </div>
+
+                    <p class="price"><span>$ 600</span> /month</p>
+
+                    <div class="rooms">
+                      <div>
+                        <img src="img/svg/bed.svg" alt="" class="room-icon" />
+                        <span>2 Bedroom</span>
+                      </div>
+                      <div>
+                        <img
+                          src="img/svg/bathtub.svg"
+                          alt=""
+                          class="room-icon"
+                        />
+                        <span>1 Bathroom</span>
+                      </div>
+                    </div>
+
+                    <div class="status status--disapprove">
+                      <img src="img/svg/disapprove.svg" alt="" />
+                      <span>Disapproved</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="expired-tab-pane"
+              role="tabpanel"
+              aria-labelledby="expired-tab"
+              tabindex="0"
+            >
+              <div class="favorite-list">
+                <div class="favorite-item">
+                  <button class="option-icon">
+                    <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                  </button>
+                  <div class="favorite-img favorite-img--roommate">
+                    <img src="img/roommate-2.jpg" alt="" />
+                  </div>
+                  <div class="favorite-content">
+                    <div class="favorite-heading">
+                      <h3 class="heading-tertiary">
+                        Hi there, I'm looking for roommate and apartment!
+                      </h3>
+                    </div>
+
+                    <p class="roommate-text">
+                      I prefer to live with 3 people and have own bathroom
+                    </p>
+
+                    <div class="buttons">
+                      <button class="btn btn--primary">Reactive</button>
+                      <button class="btn btn--tertiary">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <script>
-      function removeActive() {
-        document.querySelectorAll(".profile-tab").forEach((item) => {
-          item.classList.remove("active");
-        });
-      }
-      document.querySelectorAll(".profile-tab").forEach((item) => {
-        item.addEventListener("click", function (e) {
-          removeActive();
-          e.target.classList.add("active");
-        });
-      });
-    </script>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>

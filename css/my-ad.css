@@ -1,6 +1,44 @@
-.favorite-container {
+.wrapper {
   max-width: 88rem;
   margin: 8rem auto;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fffef9;
+  border-radius: 1rem;
+  padding: 0.85rem 2rem;
+}
+
+.search-input input {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem 3.9rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+}
+
+.favorite-container {
   background-color: #fffef9;
   padding: 3.5rem;
   border-radius: 2rem;
@@ -152,6 +190,102 @@
   width: 2.4rem;
 }
 
+.status {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.8rem;
+  border-radius: 2rem;
+}
+
+.status--active {
+  background-color: #8dd7a1;
+}
+
+.status--pending {
+  background-color: #f1d778;
+}
+
+.status--disapprove {
+  background-color: #faa290;
+}
+
+.status img {
+  width: 2.6rem;
+}
+
+.status span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 38rem;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+.add-add {
+  position: fixed;
+  right: -11.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem 2rem 1rem 0;
+  width: 19rem;
+  border-radius: 2.2rem 0 0 2.2rem;
+  background-color: var(--color-secondary);
+  color: #fff;
+  transition: 0.3s ease-out;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+}
+
+.plus-icon {
+  flex: 0 0 7.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-secondary);
+  background-color: var(--color-grey-light-4);
+  margin: 0;
+}
+
+.add-add-text {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  flex: 1;
+}
+
+.add-add:hover {
+  right: 0;
+}
+
 @media only screen and (max-width: 550px) {
   .favorite-heading {
     flex-direction: column;
@@ -164,6 +298,10 @@
 }
 
 @media only screen and (max-width: 400px) {
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
   .favorite-container {
     padding: 2rem;
   }
@@ -183,5 +321,12 @@
   .rooms {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .status img {
+    width: 1.7rem;
+  }
+  .status span {
+    font-size: 1.6rem;
   }
 }
