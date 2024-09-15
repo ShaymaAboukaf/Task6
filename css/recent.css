@@ -35,6 +35,7 @@
   flex: 0 0 24.5rem;
   height: 44.5rem;
   overflow-y: auto;
+  z-index: 100;
   transition: 0.5s ease-in-out;
 }
 
