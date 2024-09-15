@@ -122,7 +122,6 @@ body {
 .section-recent::after {
   content: "";
   position: absolute;
-
   left: 0;
   transform: translateX(-50%);
   width: 26rem;

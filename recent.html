@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/shared.css" />
-    <link rel="stylesheet" href="css/chat.css" />
-    <title>Chat</title>
+
+    <link rel="stylesheet" href="css/recent.css" />
+    <title>Recent</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg header">
@@ -37,12 +36,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="homepage.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="homepage.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="see-more.html">See more</a>
+              <a class="nav-link" href="see-more.html">See more</a>
             </li>
           </ul>
           <div class="user-nav">
@@ -636,192 +638,156 @@
         </div>
       </div>
     </nav>
-    <div class="chat">
-      <div class="container">
-        <div class="chat-container">
-          <div class="chats">
-            <div class="chat-header">
-              <h3 class="header-title">Chats</h3>
-              <div class="icons">
-                <button>
-                  <img src="img/svg/dropdown-icon-2.svg" alt="" />
-                </button>
-                <button class="ms-3">
-                  <img src="img/svg/plus-icon.svg" alt="" />
-                </button>
-              </div>
-            </div>
 
-            <form class="chat-search">
-              <div class="search">
-                <img src="img/svg/search.svg" alt="" />
-                <input type="text" class="input-search" placeholder="Search" />
+    <section class="recent">
+      <div class="container">
+        <h2 class="heading-secondary text-center">Recent</h2>
+
+        <button class="filter-btn">
+          <img src="img/svg/filter.svg" alt="" /> <span>filter</span>
+        </button>
+
+        <div class="recent-wrapper">
+          <div class="recent-filter">
+            <button class="close-btn">&times;</button>
+            <h3 class="heading-tertiary">filter</h3>
+            <form>
+              <div class="box">
+                <label>What is your location?</label>
+                <div class="select-menu mb-4">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Emirate</span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.24738 11.1399L2.45115 5.6585C1.88539 5.01192 2.34457 4 3.20373 4H12.7962C13.6554 4 14.1145 5.01192 13.5488 5.6585L8.75254 11.1399C8.35413 11.5952 7.6458 11.5952 7.24738 11.1399Z"
+                        fill="#7D8082"
+                      />
+                    </svg>
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Dubai</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">City</span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.24738 11.1399L2.45115 5.6585C1.88539 5.01192 2.34457 4 3.20373 4H12.7962C13.6554 4 14.1145 5.01192 13.5488 5.6585L8.75254 11.1399C8.35413 11.5952 7.6458 11.5952 7.24738 11.1399Z"
+                        fill="#7D8082"
+                      />
+                    </svg>
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Sharjah</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Al Ain</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="box">
+                <label for="date">Available date</label>
+                <input type="date" id="date" class="custom-input" />
+              </div>
+
+              <div class="box">
+                <label for="budget">Budget</label>
+                <div class="input-box">
+                  <label for="budget">Minimum</label>
+                  <div class="budget-input">
+                    <input type="text" id="budget" value="300" />
+                    <span>$</span>
+                  </div>
+                </div>
               </div>
             </form>
-
-            <ul class="chat-list">
-              <li class="chat-item">
-                <img src="img/roommate-1.jpg" alt="" class="chat-img" />
-                <div class="">
-                  <p class="user-name">Ali Saebe</p>
-                  <p class="user-text">I need roommate to..</p>
-                </div>
-                <span class="chat-time">36m</span>
-              </li>
-              <li class="chat-item active">
-                <img src="img/roommate-2.jpg" alt="" class="chat-img" />
-                <div class="">
-                  <p class="user-name">Ali Saebe</p>
-                  <p class="user-text">I need roommate to..</p>
-                </div>
-                <span class="chat-time">36m</span>
-              </li>
-              <li class="chat-item">
-                <img src="img/roommate-3.jpg" alt="" class="chat-img" />
-                <div class="">
-                  <p class="user-name">Ali Saebe</p>
-                  <p class="user-text">I need roommate to..</p>
-                </div>
-                <span class="chat-time">36m</span>
-              </li>
-            </ul>
           </div>
-          <div class="conversation">
-            <div class="conversation-header">
-              <div class="conversation-header-left">
-                <div class="img-box">
-                  <img src="img/roommate-1.jpg" alt="" class="friend-img" />
-                </div>
-                <div>
-                  <p class="username">Rama Kita</p>
-                  <p class="active-now">Active Now</p>
-                </div>
-              </div>
-
-              <button class="call-btn">
-                <img src="img/svg/telephone-fill.svg" alt="" />
-              </button>
-              <div class="menu-icon">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-              </div>
+          <div class="recent-content">
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
             </div>
-            <div class="typing-container">
-              <div class="person-type">
-                <p class="type-text">
-                  Hello Ranim, I watched your ad that you have housing. And I
-                  want to get to know you more
-                </p>
-
-                <p class="type-time">10:45 PM</p>
-              </div>
-
-              <div class="person-type">
-                <p class="type-text type-text-2">
-                  Oh! welcome, do you want specific details?
-                </p>
-
-                <div class="type-time type-time-2">
-                  <span>11:30 PM</span>
-                  <div class="check">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12.7365 3.96967C13.0255 3.67678 13.4942 3.67678 13.7832 3.96967C14.0687 4.25897 14.0722 4.72582 13.7937 5.01947L7.88025 12.0097C7.87456 12.0169 7.86848 12.0238 7.86205 12.0303C7.573 12.3232 7.10437 12.3232 6.81532 12.0303L3.21678 8.38388C2.92774 8.09099 2.92774 7.61612 3.21678 7.32322C3.50583 7.03033 3.97446 7.03033 4.26351 7.32322L7.31638 10.4167L12.7169 3.9921C12.723 3.98424 12.7295 3.97674 12.7365 3.96967Z"
-                        fill="#fff"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="person-type">
-                <p class="type-text">can you send picture to me please!</p>
-
-                <p class="type-time">11:45 PM</p>
-              </div>
-
-              <div>
-                <div class="photos">
-                  <img src="img/room-1.jpg" alt="" />
-                  <img src="img/room-2.jpg" alt="" />
-                  <img src="img/room-3.jpg" alt="" />
-                  <img src="img/room.png" alt="" />
-                </div>
-                <div class="type-time type-time-2">
-                  <span>11:30 PM</span>
-                  <div class="check">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12.7365 3.96967C13.0255 3.67678 13.4942 3.67678 13.7832 3.96967C14.0687 4.25897 14.0722 4.72582 13.7937 5.01947L7.88025 12.0097C7.87456 12.0169 7.86848 12.0238 7.86205 12.0303C7.573 12.3232 7.10437 12.3232 6.81532 12.0303L3.21678 8.38388C2.92774 8.09099 2.92774 7.61612 3.21678 7.32322C3.50583 7.03033 3.97446 7.03033 4.26351 7.32322L7.31638 10.4167L12.7169 3.9921C12.723 3.98424 12.7295 3.97674 12.7365 3.96967Z"
-                        fill="#fff"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="typing">
-                <form class="typing-form">
-                  <button class="attach-btn">
-                    <img src="img/svg/attach.svg" alt="" />
-                  </button>
-                  <div class="typing-group">
-                    <input
-                      type="text"
-                      class="typing-input"
-                      placeholder="Type something"
-                    />
-                    <button><img src="img/svg/emoji.svg" alt="" /></button>
-                  </div>
-                  <button type="submit" class="send-btn">
-                    <img src="img/svg/arrow-up.svg" alt="" />
-                  </button>
-                </form>
-              </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
             </div>
-          </div>
-          <div class="profile">
-            <div class="profile-box">
-              <img src="img/roommate-1.jpg" alt="" class="profile-img" />
-              <p class="profile-name">Rama Kita</p>
-              <div class="profile-icons">
-                <div class="text-center">
-                  <a href="#" class="profile-btn">
-                    <img src="img/svg/person-fill.svg" alt="" />
-                  </a>
-                  <p>Profile</p>
-                </div>
-                <div class="text-center">
-                  <button class="profile-btn">
-                    <img src="img/svg/bell-fill.svg" alt="" />
-                  </button>
-                  <p>Mute</p>
-                </div>
-              </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
+            </div>
+            <div class="recent-img">
+              <img src="img/recent-1.jpg" alt="" />
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <script src="./bootstrap/bootstrap.bundle.min.js" async></script>
-    <script src="js/main.js"></script>
+    </section>
 
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
     <script>
+      const filterEl = document.querySelector(".recent-filter");
       document
-        .querySelector(".menu-icon")
+        .querySelector(".filter-btn")
         .addEventListener("click", function () {
-          document.querySelector(".chats").classList.toggle("active");
+          filterEl.classList.add("active");
+        });
+
+      document
+        .querySelector(".close-btn")
+        .addEventListener("click", function () {
+          filterEl.classList.remove("active");
         });
     </script>
   </body>
