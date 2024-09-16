@@ -238,6 +238,7 @@ body {
 
 .highest-wrapper {
   display: flex;
+  justify-content: center;
 }
 
 .highest-tabs {

@@ -3,7 +3,7 @@
 /**************************/
 
 .header {
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   font-size: 2rem;
   font-weight: 500;
   background-color: var(--color-grey-light-3);
@@ -13,9 +13,13 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 92%;
   max-width: 130rem;
   z-index: 1000;
+}
+
+.navbar-brand {
+  padding: 1.95rem 0;
 }
 
 .header-img {
@@ -61,11 +65,12 @@
 .dropdown-btn {
   border: none;
   background-color: transparent;
+  padding: 1.6rem 0;
 }
 
 .custom-dropdown-menu {
   position: absolute;
-  top: calc(100% + 1.25rem);
+  top: 100%;
   right: 0;
   width: max-content;
   padding: 2rem;
@@ -74,6 +79,7 @@
   box-shadow: var(--shadow-1);
   z-index: 10;
   transition: 0.3s ease-in-out;
+  pointer-events: none;
   opacity: 0;
   visibility: hidden;
 }
@@ -90,6 +96,7 @@
 .custom-dropdown:hover .custom-dropdown-menu {
   opacity: 1;
   visibility: visible;
+  pointer-events: initial;
 }
 
 .dropdown-menu-header {

@@ -163,14 +163,13 @@ a.active {
   html {
     font-size: 50%;
   }
+  .grid-col--3 {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media only screen and (max-width: 40.62em) {
   html {
     font-size: 50%;
-  }
-
-  .grid-col--3 {
-    grid-template-columns: 1fr;
   }
 }
