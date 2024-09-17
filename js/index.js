@@ -55,30 +55,30 @@ const recommendSwiper = new Swiper(".recommend-swiper", {
 
 // AVAILABLE SLIDER
 const availableSwiper = new Swiper(".available-swiper", {
-  slidesPerView: 1,
+  slidesPerView: "auto",
   spaceBetween: 15,
 
-  breakpoints: {
-    550: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
+  // breakpoints: {
+  //   550: {
+  //     slidesPerView: 2,
+  //     spaceBetween: 20,
+  //   },
 
-    700: {
-      slidesPerView: 2.5,
-      spaceBetween: 20,
-    },
+  //   700: {
+  //     slidesPerView: 2.5,
+  //     spaceBetween: 20,
+  //   },
 
-    900: {
-      slidesPerView: 3,
-      spaceBetween: 5,
-    },
+  //   900: {
+  //     slidesPerView: 3,
+  //     spaceBetween: 5,
+  //   },
 
-    1200: {
-      slidesPerView: 2.5,
-      spaceBetween: 5,
-    },
-  },
+  //   1200: {
+  //     slidesPerView: 2.5,
+  //     spaceBetween: 5,
+  //   },
+  // },
 });
 
 function removeActiveClass() {

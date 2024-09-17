@@ -328,18 +328,26 @@ body {
   justify-content: center;
 }
 
-.available-wrapper .swiper-slide {
+/* .available-wrapper .swiper-slide {
   display: flex;
   justify-content: center;
   transition: 0.5s;
+} */
+
+.available-card {
+  width: 13.5rem;
+}
+
+.available-card.active {
+  width: 45rem;
 }
 
 .slide_1 {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 13.5rem;
-  min-width: 6rem;
+  /* width: 13.5rem; */
+  /* min-width: 6rem; */
   height: 47rem;
   border-radius: 2rem;
   position: relative;
