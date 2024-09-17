@@ -80,9 +80,10 @@ p {
 }
 
 .container {
+  width: 92%;
   max-width: 130rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  /* padding: 0 1.5rem; */
 }
 
 .heading-secondary,

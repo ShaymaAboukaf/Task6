@@ -178,7 +178,7 @@
 
 .recent-card {
   position: relative;
-  width: 30rem;
+  max-width: 30rem;
   border-radius: 0.9rem;
   overflow: hidden;
   box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.168);
@@ -267,7 +267,7 @@
   right: 2rem;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 992px) {
   .recent-content {
     grid-template-columns: repeat(2, 1fr);
   }

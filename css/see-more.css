@@ -157,7 +157,7 @@ body {
 
 .recent-card {
   position: relative;
-  width: 37.4rem;
+  max-width: 37.4rem;
   border-radius: 0.9rem;
   overflow: hidden;
   box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.16);
