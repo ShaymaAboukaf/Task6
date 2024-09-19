@@ -43,6 +43,7 @@ options.forEach((option) => {
   });
 });
 
+/*=========================== UPLOAD PROFILE IMAGE  ======================*/
 const fileInput = document.querySelector(".upload-input");
 const imgsPreview = document.querySelector(".imgs-preview");
 if (fileInput) {

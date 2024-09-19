@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/add-ad.css" />
+
+    <title>Edit Post</title>
+  </head>
+  <body>
+    <div
+      class="modal fade"
+      id="confirmModal"
+      class="confirmModal"
+      tabindex="-1"
+      aria-labelledby="confirmModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="modal-inner">
+              <img src="img/Mail sent-rafiki.png" alt="" />
+              <p>Your request has been sent!</p>
+              <p>You will have to wait until the admin confirm your post!</p>
+              <button
+                class="btn btn--primary modal-btn"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade disapproveModal"
+      id="disapproveModal"
+      tabindex="-1"
+      aria-labelledby="disapproveLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="modal-inner">
+              <img src="img/freepik--Mail--inject-104.png" alt="" />
+              <p>Oopps...</p>
+              <p>
+                We can't post your ad because you didn't add the room address.
+              </p>
+              <button
+                class="btn edit-try-btn"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Edit and try agin
+              </button>
+
+              <button
+                class="not-now-btn"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Not Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg header">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="homepage.html">
+          <img src="img/logo.png" alt="Roomyco logo" class="header-img" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="homepage.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="see-more.html">See more</a>
+            </li>
+          </ul>
+          <div class="user-nav">
+            <a href="favorite.html">
+              <img
+                src="img/svg/heart-fill.svg"
+                alt="heart icon"
+                class="user-icon"
+            /></a>
+            <div class="custom-dropdown">
+              <button class="dropdown-btn">
+                <svg
+                  width="32"
+                  height="24"
+                  viewBox="0 0 32 24"
+                  fill="currentcolor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="user-icon"
+                >
+                  <g id="Subtract">
+                    <path
+                      id="Subtract_2"
+                      d="M1 3.13044C1 1.40154 2.62297 0 4.625 0H26.375C28.377 0 30 1.40154 30 3.13043V15.6522C30 17.3811 28.377 18.7826 26.375 18.7826H21.8438C21.2733 18.7826 20.736 19.0146 20.3937 19.4087L16.95 23.3739C16.225 24.2087 14.775 24.2087 14.05 23.3739L10.6063 19.4087C10.264 19.0146 9.72675 18.7826 9.15625 18.7826H4.625C2.62297 18.7826 1 17.3811 1 15.6522V3.13044ZM10.0625 9.3913C10.0625 8.52686 9.25102 7.82609 8.25 7.82609C7.24898 7.82609 6.4375 8.52686 6.4375 9.3913C6.4375 10.2557 7.24898 10.9565 8.25 10.9565C9.25102 10.9565 10.0625 10.2557 10.0625 9.3913ZM17.3125 9.3913C17.3125 8.52686 16.501 7.82609 15.5 7.82609C14.499 7.82609 13.6875 8.52686 13.6875 9.3913C13.6875 10.2557 14.499 10.9565 15.5 10.9565C16.501 10.9565 17.3125 10.2557 17.3125 9.3913ZM22.75 10.9565C23.751 10.9565 24.5625 10.2557 24.5625 9.3913C24.5625 8.52686 23.751 7.82609 22.75 7.82609C21.749 7.82609 20.9375 8.52686 20.9375 9.3913C20.9375 10.2557 21.749 10.9565 22.75 10.9565Z"
+                      fill="currentcolor"
+                    />
+                  </g>
+                </svg>
+              </button>
+
+              <div class="custom-dropdown-menu">
+                <div class="dropdown-menu-header">
+                  <h3 class="heading-tertiary">Chat</h3>
+                  <div class="header-icons">
+                    <div class="dropdown-header-icon">
+                      <img src="img/svg/dropdown-icon-1.svg" alt="" />
+                    </div>
+                    <div class="dropdown-header-icon">
+                      <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="chat.html" class="dropdown-item">
+                      <img
+                        src="img/roommate-1.jpg"
+                        alt=""
+                        class="dropdown-item-img"
+                      />
+
+                      <div class="chat-content">
+                        <p class="chat-sender">Ali Saebe</p>
+                        <p class="chat-text">
+                          I need roommate to share a room with
+                        </p>
+                      </div>
+
+                      <p class="chat-time">36m</p>
+                      <div
+                        class="dropdown-header-icon dropdown-header-icon--float"
+                      >
+                        <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="chat.html"
+                      class="dropdown-item dropdown-item--notify"
+                    >
+                      <img
+                        src="img/roommate-1.jpg"
+                        alt=""
+                        class="dropdown-item-img"
+                      />
+
+                      <div class="chat-content">
+                        <p class="chat-sender">Ali Saebe</p>
+                        <p class="chat-text">
+                          <span>You:</span> I need roommate to share a room with
+                        </p>
+                      </div>
+
+                      <p class="chat-time">1h</p>
+                      <div
+                        class="dropdown-header-icon dropdown-header-icon--float"
+                      >
+                        <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="chat.html" class="dropdown-item">
+                      <img
+                        src="img/roommate-1.jpg"
+                        alt=""
+                        class="dropdown-item-img"
+                      />
+
+                      <div class="chat-content">
+                        <p class="chat-sender">Ali Saebe</p>
+                        <p class="chat-text">
+                          I need roommate to share a room with
+                        </p>
+                      </div>
+
+                      <p class="chat-time">36m</p>
+                      <div
+                        class="dropdown-header-icon dropdown-header-icon--float"
+                      >
+                        <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <button class="dropdown-btn">
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  class="user-icon"
+                >
+                  <path
+                    d="M16 32c2.209 0 4-1.791 4-4h-8c0 2.209 1.791 4 4 4z"
+                  ></path>
+                  <path
+                    d="M17.99 2.198c0.006-0.065 0.010-0.131 0.010-0.198 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.067 0.003 0.133 0.010 0.198-4.569 0.923-8.010 4.961-8.010 9.802 0 2.195-1 12-4 14h28c-3-2-4-11.805-4-14 0-4.841-3.44-8.879-8.010-9.802z"
+                  ></path>
+                </svg>
+              </button>
+
+              <div class="custom-dropdown-menu notifications">
+                <div class="notifications-header">
+                  <h4 class="notifications-title">Notifications</h4>
+
+                  <button class="chat-icons">
+                    <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                  </button>
+                </div>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="all-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#all-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="all-tab-pane"
+                      aria-selected="true"
+                    >
+                      All
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="unread-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#unread-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="unread-tab-pane"
+                      aria-selected="false"
+                    >
+                      Unread
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="all-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="all-tab"
+                    tabindex="0"
+                  >
+                    <div class="notification-box">
+                      <h4 class="notification-title">New</h4>
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="match-avatar notification-imgs">
+                            <img src="img/roommate-5.jpg" alt="" />
+                            <img src="img/roommate-2.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>
+                                There are a Roommates who matches your profile.
+                                Check it out now!
+                              </p>
+                              <span>11m</span>
+                            </div>
+                          </div>
+
+                          <div class="notification-circle"></div>
+                          <div class="option-icon">
+                            <img src="img/svg/dropdown-icon-2.svg" alt="" />
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="notification-box">
+                      <h4 class="notification-title">Today</h4>
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 24C2 24 0 24 0 22C0 20 2 14 12 14C22 14 24 20 24 22C24 24 22 24 22 24H2Z"
+                                  fill="black"
+                                />
+                                <path
+                                  d="M12 12C15.3137 12 18 9.31371 18 6C18 2.68629 15.3137 0 12 0C8.68629 0 6 2.68629 6 6C6 9.31371 8.68629 12 12 12Z"
+                                  fill="#000"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+
+                          <div class="notification-text">
+                            <div>
+                              <p>Someone adding your ad to favorites!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="notification-box">
+                      <h4 class="notification-title">Older</h4>
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs noti-avatar">
+                            <img src="img/roommate-1.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Ali Saebe gave you a rating.</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="31"
+                                height="28"
+                                viewBox="0 0 31 28"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M1.07723 5.34992C1.44879 3.74413 2.91282 2.54541 4.66227 2.54541H26.7194C28.4689 2.54541 29.9329 3.74413 30.3045 5.34992L15.6908 14.1101L1.07723 5.34992ZM0.986084 7.40833V20.2162L11.6529 13.8026L0.986084 7.40833ZM13.4142 14.8584L1.33876 22.1189C1.9283 23.3384 3.19488 24.1818 4.66227 24.1818H26.7194C28.1868 24.1818 29.4534 23.3384 30.0429 22.1189L17.9675 14.8584L15.6908 16.2231L13.4142 14.8584ZM19.7288 13.8026L30.3956 20.2162V7.40833L19.7288 13.8026Z"
+                                  fill="#292C2D"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>You have a new message!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs noti-avatar">
+                            <img src="img/roommate-5.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Dema doghouz request to follow you.</p>
+                              <span>14h</span>
+                            </div>
+                            <div class="confirm-request">
+                              <div class="confirm-btn button">Confirm</div>
+                              <div class="delete-btn button">Delete</div>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 24C2 24 0 24 0 22C0 20 2 14 12 14C22 14 24 20 24 22C24 24 22 24 22 24H2Z"
+                                  fill="black"
+                                />
+                                <path
+                                  d="M12 12C15.3137 12 18 9.31371 18 6C18 2.68629 15.3137 0 12 0C8.68629 0 6 2.68629 6 6C6 9.31371 8.68629 12 12 12Z"
+                                  fill="black"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Someone adding your ad to favorites!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs noti-avatar">
+                            <img src="img/roommate-1.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Ali Saebe gave you a rating.</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="31"
+                                height="28"
+                                viewBox="0 0 31 28"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M1.07723 5.34992C1.44879 3.74413 2.91282 2.54541 4.66227 2.54541H26.7194C28.4689 2.54541 29.9329 3.74413 30.3045 5.34992L15.6908 14.1101L1.07723 5.34992ZM0.986084 7.40833V20.2162L11.6529 13.8026L0.986084 7.40833ZM13.4142 14.8584L1.33876 22.1189C1.9283 23.3384 3.19488 24.1818 4.66227 24.1818H26.7194C28.1868 24.1818 29.4534 23.3384 30.0429 22.1189L17.9675 14.8584L15.6908 16.2231L13.4142 14.8584ZM19.7288 13.8026L30.3956 20.2162V7.40833L19.7288 13.8026Z"
+                                  fill="#292C2D"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>You have a new message!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="unread-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="unread-tab"
+                    tabindex="0"
+                  >
+                    <div class="notification-box">
+                      <h4 class="notification-title">New</h4>
+
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="match-avatar notification-imgs">
+                            <img src="img/roommate-5.jpg" alt="" />
+                            <img src="img/roommate-2.jpg" alt="" />
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>
+                                There are a Roommates who matches your profile.
+                                Check it out now!
+                              </p>
+                              <span>11m</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="notification-box">
+                      <h4 class="notification-title">Today</h4>
+                      <a href="#">
+                        <div class="notification-item">
+                          <div class="notification-imgs">
+                            <div class="someone-added">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 24C2 24 0 24 0 22C0 20 2 14 12 14C22 14 24 20 24 22C24 24 22 24 22 24H2Z"
+                                  fill="black"
+                                />
+                                <path
+                                  d="M12 12C15.3137 12 18 9.31371 18 6C18 2.68629 15.3137 0 12 0C8.68629 0 6 2.68629 6 6C6 9.31371 8.68629 12 12 12Z"
+                                  fill="black"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="notification-text">
+                            <div>
+                              <p>Someone adding your ad to favorites!</p>
+                              <span>14h</span>
+                            </div>
+                          </div>
+                          <div class="notification-circle"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="custom-dropdown">
+              <button class="dropdown-btn">
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  class="user-icon"
+                >
+                  <path
+                    d="M2 4c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                  <path
+                    d="M12 4c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                  <path
+                    d="M22 4c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                  <path
+                    d="M2 14c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                  <path
+                    d="M12 14c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                  <path
+                    d="M22 14c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                  <path
+                    d="M2 24c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                  <path
+                    d="M12 24c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                  <path
+                    d="M22 24c0-1.105 0.895-2 2-2h4c1.105 0 2 0.895 2 2v4c0 1.105-0.895 2-2 2h-4c-1.105 0-2-0.895-2-2v-4z"
+                  ></path>
+                </svg>
+              </button>
+              <div class="custom-dropdown-menu menu-dropdown">
+                <div class="dropdown-menu-header">
+                  <h3 class="heading-tertiary">Menu</h3>
+                </div>
+                <ul class="dropdown-list">
+                  <div class="account-type-wrapper">
+                    <a
+                      href="signup.html"
+                      class="account-type-title dropdown-item"
+                      ><span>Change account type</span>
+                    </a>
+                    <ul class="dropdown-list account-type">
+                      <li class="dropdown-item">
+                        <div class="dropdown-img-box">
+                          <img
+                            src="img/svg/arrow-1.svg"
+                            alt=""
+                            class="arrow-1"
+                          />
+                          <img
+                            src="img/roommate-1.jpg"
+                            alt=""
+                            class="dropdown-item-img"
+                          />
+                          <img
+                            src="img/svg/arrow-2.svg"
+                            alt=""
+                            class="arrow-2"
+                          />
+                        </div>
+
+                        <h3 class="heading-tertiary js-account-type">
+                          Seeker of room
+                        </h3>
+                      </li>
+                      <!-- <li class="dropdown-item">
+                        <div class="dropdown-img-box">
+                          <img
+                            src="img/svg/arrow-1.svg"
+                            alt=""
+                            class="arrow-1"
+                          />
+                          <img
+                            src="img/roommate-1.jpg"
+                            alt=""
+                            class="dropdown-item-img"
+                          />
+                          <img
+                            src="img/svg/arrow-2.svg"
+                            alt=""
+                            class="arrow-2"
+                          />
+                        </div>
+                        <h3 class="heading-tertiary js-account-type">
+                          list place only
+                        </h3>
+                      </li> -->
+                    </ul>
+                  </div>
+                  <li>
+                    <a href="#" class="dropdown-item">
+                      <img src="img/svg/menu-icon-1.svg" alt="" />
+                      <span>My Advertisements</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="plans.html" class="dropdown-item">
+                      <img src="img/svg/menu-icon-2.svg" alt="" />
+                      <span>My Plan</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item">
+                      <img src="img/svg/menu-icon-3.svg" alt="" />
+                      <span>Ratings</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <a href="profile.html" class="user">
+              <img src="img/roommate-1.jpg" alt="" />
+            </a>
+            <div class="divider"></div>
+
+            <div class="custom-dropdown language">
+              <button class="dropdown-btn">
+                <span>En</span> <img src="img/svg/caret-down-fill.svg" alt="" />
+              </button>
+              <ul class="custom-dropdown-menu">
+                <li><a href="#" class="dropdown-link active">English</a></li>
+                <li><a href="#" class="dropdown-link">Arabic</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="add-ad" id="seeker-roommate">
+      <div class="add-header">
+        <h2 class="title">Edit post</h2>
+        <a href="see-more.html" class="close-btn"
+          ><img src="img/svg/x.svg" alt=""
+        /></a>
+      </div>
+
+      <h3 class="heading-tertiary text-center mt-2 mb-5">
+        Advertisements of search for a roommate!
+      </h3>
+      <div class="form-content">
+        <form class="ad-form" enctype="multipart/form-data">
+          <div class="box">
+            <label for="title">Title</label>
+            <div class="pb-4 divide">
+              <input
+                type="text"
+                class="ad-input"
+                value="Hi there, I have apartment and I'm looking for roommate!"
+              />
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">Address</label>
+            <div class="select-wrapper pb-4 divide">
+              <div>
+                <label for="emirate">Emirate</label>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Dubai</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Dubai</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <label for="emirate">City</label>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Al Wasel</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Al Wasel</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">Location</label>
+            <div class="location pb-4 divide">
+              <input
+                type="text"
+                class="ad-input"
+                id="coordinates"
+                placeholder="Set point on map"
+                readonly
+              />
+              <svg
+                width="18"
+                height="23"
+                viewBox="0 0 18 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="location-icon"
+              >
+                <path
+                  d="M9 23C9 23 18 14.8259 18 8.625C18 3.86154 13.9706 0 9 0C4.02944 0 0 3.86154 0 8.625C0 14.8259 9 23 9 23ZM9 12.9375C6.51472 12.9375 4.5 11.0067 4.5 8.625C4.5 6.24328 6.51472 4.3125 9 4.3125C11.4853 4.3125 13.5 6.24328 13.5 8.625C13.5 11.0067 11.4853 12.9375 9 12.9375Z"
+                  fill="#FFD433"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="box">
+            <div></div>
+            <div id="map"></div>
+          </div>
+          <div class="box">
+            <label for="title">Category of the place</label>
+
+            <div class="pb-4 divide">
+              <div class="select-menu">
+                <div class="select-btn">
+                  <span class="sBtn-text" data-value="">Room</span>
+                  <img src="img/svg/Chevron.svg" alt="" />
+                </div>
+                <ul class="options">
+                  <li class="option">
+                    <span class="option-text">Room</span>
+                  </li>
+                  <li class="option">
+                    <span class="option-text">Roommate</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label for="photos">photos of apartment</label>
+            <div class="pb-4 divide">
+              <input
+                type="file"
+                id="photos"
+                class="photo-input"
+                accept="image/*"
+                multiple
+              />
+              <label for="photos" class="upload-photo uploaded">
+                <div class="add-plus">
+                  <img src="img/svg/plus-icon.svg" alt="" />
+                </div>
+                <img src="img/svg/camera.svg" alt="" />
+                <p class="upload-text">Upload photos</p>
+                <p>just tab here to browse your gallery to uploud photo</p>
+                <img src="img/room.png" alt="" class="uploaded-img" />
+                <div class="delete-uploaded">
+                  <img src="img/svg/x-upload.svg" alt="" />
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">More info</label>
+            <div>
+              <div class="prefer">
+                <p>Number of people who live with you</p>
+                <div class="prefer-people">
+                  <button class="decrement-btn" type="button">-</button>
+                  <span class="number">2</span>
+                  <button class="increment-btn" type="button">+</button>
+                </div>
+              </div>
+
+              <div class="amenities">
+                <p>Place amenities</p>
+                <div class="amenities-grid">
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="wifi" />
+                    <label for="wifi"
+                      ><span class="custom-radio-2"></span> Wi-Fi
+                    </label>
+                  </div>
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="parking" checked />
+                    <label for="parking"
+                      ><span class="custom-radio-2"></span> Parking
+                    </label>
+                  </div>
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="television" checked />
+                    <label for="television"
+                      ><span class="custom-radio-2"></span>Television
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="btn--primary post-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#confirmModal"
+          >
+            Post
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="add-ad" id="seeker-roommate">
+      <div class="add-header">
+        <h2 class="title">Edit post</h2>
+        <a href="see-more.html" class="close-btn"
+          ><img src="img/svg/x.svg" alt=""
+        /></a>
+      </div>
+
+      <h3 class="heading-tertiary text-center mt-2 mb-5">
+        Advertisements of search for a roommate!
+      </h3>
+      <div class="form-content">
+        <form class="ad-form">
+          <div class="box">
+            <label for="title">Title</label>
+            <div class="pb-4 divide">
+              <input
+                type="text"
+                class="ad-input"
+                value="Hi there, I'm looking for roommate and apartment!"
+              />
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">Address</label>
+            <div class="select-wrapper pb-4 divide">
+              <div>
+                <label for="emirate">Emirate</label>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Dubai</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Dubai</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <label for="emirate">City</label>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Al Wasel</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Al Wasel</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <label for="title">I’m looking for</label>
+
+            <div class="pb-4 divide">
+              <div class="select-menu">
+                <div class="select-btn">
+                  <span class="sBtn-text" data-value="">Room</span>
+                  <img src="img/svg/Chevron.svg" alt="" />
+                </div>
+                <ul class="options">
+                  <li class="option">
+                    <span class="option-text">Room</span>
+                  </li>
+                  <li class="option">
+                    <span class="option-text">Roommate</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <label for="title">Price range</label>
+            <div>
+              <p class="monthly-price-text">
+                Monthly prices before fees and taxes
+              </p>
+              <div>
+                <div>
+                  <img src="img/price-range.png" alt="" class="price-img" />
+                </div>
+                <div class="double-slider-box">
+                  <div class="range-slider">
+                    <div class="slider-track"></div>
+                    <input
+                      type="range"
+                      name="min-val"
+                      min="300"
+                      max="30000"
+                      class="min-val"
+                      value="0"
+                      oninput="slideMin()"
+                    />
+                    <input
+                      type="range"
+                      name="max-val"
+                      min="300"
+                      max="30000"
+                      class="max-val"
+                      value="3500"
+                      oninput="slideMax()"
+                    />
+                  </div>
+
+                  <div class="input-box">
+                    <div class="min-box">
+                      <label>Minumum</label>
+                      <div class="price-input">
+                        <input
+                          type="text"
+                          name="min-input"
+                          class="input-field min-input form-control"
+                          onchange="setMinInput()"
+                        />
+                        <span class="">$</span>
+                      </div>
+                    </div>
+                    <div class="max-box">
+                      <label>Maximun</label>
+                      <div class="price-input">
+                        <input
+                          type="text"
+                          name="max-input"
+                          class="input-field max-input form-control"
+                          onchange="setMaxInput()"
+                        />
+                        <span class="">$</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <label for="title">More info</label>
+            <div>
+              <div class="prefer">
+                <p>Number of people who live with you</p>
+                <div class="prefer-people">
+                  <button class="decrement-btn" type="button">-</button>
+                  <span class="number">2</span>
+                  <button class="increment-btn" type="button">+</button>
+                </div>
+              </div>
+              <div class="prefer">
+                <p>Number of people prefer to live with</p>
+                <div class="prefer-people">
+                  <button class="decrement-btn" type="button">-</button>
+                  <span class="number">3</span>
+                  <button class="increment-btn" type="button">+</button>
+                </div>
+              </div>
+
+              <div class="amenities">
+                <p>Place amenities</p>
+                <div class="amenities-grid">
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-wifi" />
+                    <label for="need-wifi"
+                      ><span class="custom-radio-2"></span> Wi-Fi
+                    </label>
+                  </div>
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-parking" checked />
+                    <label for="need-parking"
+                      ><span class="custom-radio-2"></span> Parking
+                    </label>
+                  </div>
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-television" checked />
+                    <label for="need-television"
+                      ><span class="custom-radio-2"></span>Television
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn--primary post-btn">Post</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="add-ad" id="seeker-room">
+      <div class="add-header">
+        <h2 class="title">Create post</h2>
+        <a href="see-more.html" class="close-btn"
+          ><img src="img/svg/x.svg" alt=""
+        /></a>
+      </div>
+
+      <h3 class="heading-tertiary text-center mt-2 mb-5">
+        Advertisements of search for a room!
+      </h3>
+      <div class="form-content">
+        <form class="ad-form">
+          <div class="box">
+            <label for="title">Title</label>
+            <div class="pb-4 divide">
+              <input
+                type="text"
+                class="ad-input"
+                value="Hi there, I'm looking for an apartment!"
+              />
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">Address</label>
+            <div class="select-wrapper pb-4 divide">
+              <div>
+                <label for="emirate">Emirate</label>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Dubai</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Dubai</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <label for="emirate">City</label>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Al Wasel</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Al Wasel</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">I’m looking for</label>
+
+            <div class="pb-4 divide">
+              <div class="select-menu">
+                <div class="select-btn">
+                  <span class="sBtn-text" data-value="">Room</span>
+                  <img src="img/svg/Chevron.svg" alt="" />
+                </div>
+                <ul class="options">
+                  <li class="option">
+                    <span class="option-text">Room</span>
+                  </li>
+                  <li class="option">
+                    <span class="option-text">Roommate</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <label for="title">Price range</label>
+            <div>
+              <p class="monthly-price-text">
+                Monthly prices before fees and taxes
+              </p>
+              <div>
+                <div>
+                  <img src="img/price-range.png" alt="" class="price-img" />
+                </div>
+                <div class="double-slider-box">
+                  <div class="range-slider">
+                    <div class="slider-track"></div>
+                    <input
+                      type="range"
+                      name="min-val"
+                      min="300"
+                      max="30000"
+                      class="min-val"
+                      value="0"
+                      oninput="slideMin()"
+                    />
+                    <input
+                      type="range"
+                      name="max-val"
+                      min="300"
+                      max="30000"
+                      class="max-val"
+                      value="3500"
+                      oninput="slideMax()"
+                    />
+                  </div>
+
+                  <div class="input-box">
+                    <div class="min-box">
+                      <label>Minumum</label>
+                      <div class="price-input">
+                        <input
+                          type="text"
+                          name="min-input"
+                          class="input-field min-input form-control"
+                          onchange="setMinInput()"
+                        />
+                        <span class="">$</span>
+                      </div>
+                    </div>
+                    <div class="max-box">
+                      <label>Maximun</label>
+                      <div class="price-input">
+                        <input
+                          type="text"
+                          name="max-input"
+                          class="input-field max-input form-control"
+                          onchange="setMaxInput()"
+                        />
+                        <span class="">$</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <label for="title">More info</label>
+            <div>
+              <div class="price">
+                <p>What’s the unit rent?</p>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">unit</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">unit</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">AED</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">USD</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="price">
+                <p>I want to move before a date</p>
+                <input type="date" class="date" />
+              </div>
+              <div class="prefer">
+                <p>Number of people who live with you</p>
+                <div class="prefer-people">
+                  <button class="decrement-btn" type="button">-</button>
+                  <span class="number">2</span>
+                  <button class="increment-btn" type="button">+</button>
+                </div>
+              </div>
+              <div class="prefer">
+                <p>Number of people prefer to live with</p>
+                <div class="prefer-people">
+                  <button class="decrement-btn" type="button">-</button>
+                  <span class="number">3</span>
+                  <button class="increment-btn" type="button">+</button>
+                </div>
+              </div>
+
+              <div class="amen-life amenities">
+                <p>Place amenities</p>
+                <div class="amenities-grid">
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-wifi" />
+                    <label for="need-wifi"
+                      ><span class="custom-radio-2"></span> Wi-Fi
+                    </label>
+                  </div>
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-parking" checked />
+                    <label for="need-parking"
+                      ><span class="custom-radio-2"></span> Parking
+                    </label>
+                  </div>
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-television" checked />
+                    <label for="need-television"
+                      ><span class="custom-radio-2"></span>Television
+                    </label>
+                  </div>
+                </div>
+
+                <p>Life style</p>
+                <ul class="life-style">
+                  <li>Bets_Lover</li>
+                  <span> - </span>
+                  <li>Smoking</li>
+                  <span> - </span>
+                  <li>Islamic</li>
+                  <span> - </span>
+                  <li>Photography</li>
+                  <span> - </span>
+                  <li>Book_lover</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="btn--primary post-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#disapproveModal"
+          >
+            Post
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="add-ad" id="list-place">
+      <div class="add-header">
+        <h2 class="title">Create post</h2>
+        <a href="see-more.html" class="close-btn"
+          ><img src="img/svg/x.svg" alt=""
+        /></a>
+      </div>
+
+      <h3 class="heading-tertiary text-center mt-2 mb-5">
+        Advertisements of search for a roommate!
+      </h3>
+      <div class="form-content">
+        <form class="ad-form">
+          <div class="box">
+            <label for="title">Title</label>
+            <div class="pb-4 divide">
+              <input
+                type="text"
+                class="ad-input"
+                value="Hi there, I have apartment!"
+              />
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">Description</label>
+            <div class="pb-4 divide">
+              <textarea class="ad-area">We have small room ...</textarea>
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">Address</label>
+            <div class="select-wrapper pb-4 divide">
+              <div>
+                <label for="emirate">Emirate</label>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Dubai</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Dubai</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <label for="emirate">City</label>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">Al Wasel</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Al Wasel</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Ajman</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">Location</label>
+            <div class="location pb-4 divide">
+              <input
+                type="text"
+                class="ad-input"
+                id="coordinates"
+                placeholder="Set point on map"
+                readonly
+              />
+              <svg
+                width="18"
+                height="23"
+                viewBox="0 0 18 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="location-icon"
+              >
+                <path
+                  d="M9 23C9 23 18 14.8259 18 8.625C18 3.86154 13.9706 0 9 0C4.02944 0 0 3.86154 0 8.625C0 14.8259 9 23 9 23ZM9 12.9375C6.51472 12.9375 4.5 11.0067 4.5 8.625C4.5 6.24328 6.51472 4.3125 9 4.3125C11.4853 4.3125 13.5 6.24328 13.5 8.625C13.5 11.0067 11.4853 12.9375 9 12.9375Z"
+                  fill="#FFD433"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="box">
+            <div></div>
+            <div id="map"></div>
+          </div>
+          <div class="box">
+            <label for="title">Category of the place</label>
+
+            <div class="pb-4 divide">
+              <div class="select-menu">
+                <div class="select-btn">
+                  <span class="sBtn-text" data-value="">Room</span>
+                  <img src="img/svg/Chevron.svg" alt="" />
+                </div>
+                <ul class="options">
+                  <li class="option">
+                    <span class="option-text">Room</span>
+                  </li>
+                  <li class="option">
+                    <span class="option-text">Roommate</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">Price range</label>
+            <div class="pb-4 divide">
+              <div class="price">
+                <p>Monthly prices before fees and taxes</p>
+                <div class="monthly-price">
+                  <input type="text" placeholder="500" />
+                  <span>AED</span>
+                </div>
+              </div>
+              <div class="price">
+                <p>What’s the unit rent?</p>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text" data-value="">unit</span>
+                    <img src="img/svg/Chevron.svg" alt="" />
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">unit</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">AED</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">USD</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label for="photos">photos of apartment</label>
+            <div class="pb-4 divide">
+              <input
+                type="file"
+                id="photos"
+                class="photo-input"
+                accept="image/*"
+                multiple
+              />
+              <label for="photos" class="upload-photo">
+                <div class="add-plus">
+                  <img src="img/svg/plus-icon.svg" alt="" />
+                </div>
+                <img src="img/svg/camera.svg" alt="" />
+                <p class="upload-text">Upload photos</p>
+                <p>just tab here to browse your gallery to uploud photo</p>
+              </label>
+              <div class="imgs-preview"></div>
+            </div>
+          </div>
+          <div class="box">
+            <label for="title">More info</label>
+            <div>
+              <div class="amen-life amenities">
+                <p>Place amenities</p>
+                <div class="amenities-grid">
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-wifi" />
+                    <label for="need-wifi"
+                      ><span class="custom-radio-2"></span> Wi-Fi
+                    </label>
+                  </div>
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-parking" checked />
+                    <label for="need-parking"
+                      ><span class="custom-radio-2"></span> Parking
+                    </label>
+                  </div>
+                  <div class="lookfor-check">
+                    <input type="checkbox" id="need-television" checked />
+                    <label for="need-television"
+                      ><span class="custom-radio-2"></span>Television
+                    </label>
+                  </div>
+                </div>
+
+                <p>Life style</p>
+                <ul class="life-style">
+                  <li>Bets_Lover</li>
+                  <span> - </span>
+                  <li>Smoking</li>
+                  <span> - </span>
+                  <li>Islamic</li>
+                  <span> - </span>
+                  <li>Photography</li>
+                  <span> - </span>
+                  <li>Book_lover</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="btn--primary post-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#confirmModal"
+          >
+            Post
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="bootstrap/bootstrap.bundle.min.js" async></script>
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      const accType = localStorage.getItem("account-type");
+      document.querySelector(`#${accType}`).style.display = "block";
+      document.querySelectorAll(".add-ad").forEach((item) => {
+        if (item.id !== accType) {
+          item.remove();
+        }
+      });
+
+      document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+        });
+      });
+
+      let files = [];
+      const fileInput = document.querySelector(".photo-input");
+      const imgsPreview = document.querySelector(".imgs-preview");
+      if (fileInput) {
+        fileInput.addEventListener("change", function () {
+          files = [];
+          let file = fileInput.files;
+
+          for (let i = 0; i < file.length; i++) {
+            files.push(file[i]);
+          }
+          showImages();
+        });
+      }
+
+      function showImages() {
+        let images = "";
+        files.forEach((item, index) => {
+          images += ` <div class="image">
+                      <img src="${URL.createObjectURL(item)}" alt="" />
+                      <span onclick="deleteImage(${index})">&times;</span>
+                    </div>`;
+        });
+
+        imgsPreview.innerHTML = images;
+      }
+
+      function deleteImage(index) {
+        files.splice(index, 1);
+        showImages();
+      }
+
+      const optionMenu = document.querySelector(".select-menu"),
+        selectBtn = document.querySelector(".select-btn"),
+        options = document.querySelectorAll(".option"),
+        sBtn_text = document.querySelector(".sBtn-text");
+
+      const menus = document.querySelectorAll(".select-btn");
+
+      menus.forEach((select) => {
+        select.addEventListener(
+          "click",
+          function (e) {
+            e.target.parentNode.classList.toggle("active-select");
+          },
+          true
+        );
+      });
+
+      options.forEach((option) => {
+        option.addEventListener("click", function (e) {
+          let selectedOption = e.target.innerText;
+          document.querySelector(".active-select .sBtn-text").innerText =
+            selectedOption;
+          document.querySelector(".active-select .sBtn-text").dataset.value =
+            selectedOption;
+
+          option.parentNode.parentNode.classList.remove("active-select");
+        });
+      });
+
+      let preferPeople = 2;
+      let number = document.querySelector(".add-ad .show .number");
+
+      document.querySelectorAll(".add-ad .nav-link").forEach((item) => {
+        item.addEventListener("click", function () {
+          number = document.querySelector(".add-ad .active .number");
+        });
+      });
+      document.querySelectorAll(".decrement-btn").forEach((item) => {
+        item.addEventListener("click", function () {
+          if (preferPeople > 0) {
+            preferPeople--;
+            number.innerText = preferPeople;
+          }
+        });
+      });
+
+      document.querySelectorAll(".increment-btn").forEach((item) => {
+        item.addEventListener("click", function () {
+          preferPeople++;
+          number.innerText = preferPeople;
+        });
+      });
+
+      const minGap = 0;
+      let priceInputMin,
+        priceInputMax,
+        sliderMinValue,
+        sliderMaxValue,
+        range = document.querySelector(`.slider-track`);
+      function initSlider() {
+        minVal = document.querySelector(`.min-val`);
+        maxVal = document.querySelector(`.max-val`);
+        priceInputMin = document.querySelector(`.min-input`);
+        priceInputMax = document.querySelector(`.max-input`);
+
+        sliderMinValue = parseInt(minVal.min);
+        sliderMaxValue = parseInt(maxVal.max);
+
+        slideMin();
+        slideMax();
+      }
+
+      function slideMin() {
+        let gap = parseInt(maxVal.value) - parseInt(minVal.value);
+        if (gap <= minGap) {
+          minVal.value = parseInt(maxVal.value) - minGap;
+        }
+
+        priceInputMin.value = minVal.value;
+        setArea();
+      }
+
+      function slideMax() {
+        let gap = parseInt(maxVal.value) - parseInt(minVal.value);
+        if (gap <= minGap) {
+          maxVal.value = parseInt(minVal.value) + minGap;
+        }
+
+        priceInputMax.value = maxVal.value;
+        setArea();
+      }
+
+      function setArea() {
+        range.style.left = (minVal.value / sliderMaxValue) * 100 + "%";
+        range.style.right = 100 - (maxVal.value / sliderMaxValue) * 100 + "%";
+      }
+
+      function setMinInput() {
+        let minPrice = parseInt(priceInputMin.value);
+        if (minPrice < sliderMinValue) {
+          priceInputMin.value = sliderMinValue;
+        }
+
+        minVal.value = priceInputMin.value;
+        slideMin();
+      }
+
+      function setMaxInput() {
+        let maxPrice = parseInt(priceInputMax.value);
+        if (maxPrice > sliderMaxValue) {
+          priceInputMax.value = sliderMaxValue;
+        }
+
+        maxVal.value = priceInputMax.value;
+        slideMax();
+      }
+      if (range) {
+        initSlider();
+      }
+
+      // Initialize map when the user clicks the input field
+      const inputField = document.getElementById("coordinates");
+      const mapDiv = document.getElementById("map");
+      let map, marker;
+      if (inputField) {
+        inputField.addEventListener("click", () => {
+          // Show map
+          mapDiv.style.display = "block";
+
+          // Initialize Leaflet map if it hasn't been initialized yet
+          if (!map) {
+            map = L.map("map").setView([51.505, -0.09], 13); // Default view
+
+            // Add OpenStreetMap tiles
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+              attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(map);
+
+            // Add click event on map to get coordinates
+            map.on("click", function (e) {
+              const { lat, lng } = e.latlng;
+
+              // If marker already exists, update its position, otherwise create a new one
+              if (marker) {
+                marker.setLatLng(e.latlng);
+              } else {
+                marker = L.marker([lat, lng]).addTo(map);
+              }
+
+              // Update the input field with the selected coordinates
+              inputField.value = ` ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+
+              // Optionally, hide the map after selection
+              // mapDiv.style.display = 'none';
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

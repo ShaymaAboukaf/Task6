@@ -45,16 +45,13 @@
 }
 
 .edit-tabs {
-  border: 1px solid #dad6c8;
-  border-radius: 1.1rem;
-  overflow: hidden;
-}
-
-.edit-tabs .nav-tabs {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   border-radius: 1.1rem;
+  border: 1px solid #dad6c8;
+  border-radius: 1.1rem;
+  overflow: hidden;
 }
 
 .edit-tabs .nav-link {
@@ -167,6 +164,7 @@
   font-weight: 400;
   border: none;
   outline: none;
+  background-color: transparent;
 }
 
 .bio {
@@ -321,11 +319,9 @@
   .edit-container {
     grid-template-columns: 1fr;
   }
-
-  .edit-tabs .nav-tabs {
+  .edit-tabs {
     flex-direction: row;
   }
-
   .edit-tabs .nav-item {
     flex: 1;
   }
