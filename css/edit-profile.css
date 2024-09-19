@@ -55,7 +55,7 @@
 }
 
 .edit-tabs .nav-link {
-  display: block !important;
+  display: block;
   width: 100%;
   height: 100%;
   font-size: 2rem;
@@ -64,7 +64,7 @@
   text-align: initial;
   border: none !important;
 
-  background-color: #fff !important;
+  background-color: #fff;
   margin: 0 !important;
   position: relative;
 }
@@ -328,6 +328,8 @@
 
   .edit-tabs .nav-link {
     text-align: center;
+    font-size: 1.6rem;
+    padding: 2rem !important;
   }
 
   .edit-tabs .nav-link::before {
