@@ -16,7 +16,7 @@
   --color-yellow: #ffd433;
 
   --gradient-1: linear-gradient(to right, #2387c2, #11405c);
-  --gradient-2: linear-gradient(to right bottom, #eeebd3, #292c2d);
+  --gradient-2: linear-gradient(to right bottom, #eeebd375, #292c2d);
   --gradient-3: linear-gradient(#f8f4db, #fffffe);
 
   --color-text: #292c2d;
@@ -44,6 +44,8 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
 }
 
 body {
@@ -53,6 +55,7 @@ body {
   color: var(--color-text);
   /* background: linear-gradient(var(--gradient-3)); */
   background-image: linear-gradient(to bottom, #f8f4db, #fffffe);
+  background-repeat: no-repeat;
 }
 
 ul {

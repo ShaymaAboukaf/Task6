@@ -1,0 +1,371 @@
+.edit-profile {
+  padding-block: 10rem;
+  position: relative;
+}
+
+.edit-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 19.2rem;
+  background-image: linear-gradient(to bottom, #f2eacc, #8c8776);
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
+}
+
+.edit-btn {
+  width: 33rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1.6rem 0;
+  border-radius: 2rem;
+  text-align: center;
+  color: #fff;
+  border: none;
+}
+
+.btn--cancel {
+  background-color: #707070;
+}
+
+.edit-container {
+  display: grid;
+  grid-template-columns: 33rem 1fr;
+  align-items: start;
+  gap: 2.8rem;
+  margin-top: 5rem;
+}
+
+.edit-tabs {
+  border: 1px solid #dad6c8;
+  border-radius: 1.1rem;
+  overflow: hidden;
+}
+
+.edit-tabs .nav-tabs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 1.1rem;
+}
+
+.edit-tabs .nav-link {
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 4rem !important;
+  text-align: initial;
+  border: none !important;
+
+  background-color: #fff !important;
+  margin: 0 !important;
+  position: relative;
+}
+
+.edit-tabs .nav-item:not(:last-child) {
+  border-bottom: 1px solid #dad6c8 !important;
+}
+
+.edit-tabs .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+
+.edit-tabs .nav-link.active {
+  color: var(--color-primary);
+}
+
+.edit-tabs .nav-link.active::before {
+  background-color: var(--color-primary);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.edit-box {
+  padding: 3rem 9.6rem 3rem 3rem;
+  border: 1px solid #dad6c8;
+  border-radius: 1.1rem;
+  background-color: #fffef9;
+}
+
+/* Edit About */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 13.5rem 1fr;
+  gap: 3.4rem;
+  margin-top: 3rem;
+}
+
+.about-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-img {
+  width: 13.5rem;
+  height: 13.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.upload-btn {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.upload-input {
+  display: none;
+}
+
+.about-form {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  column-gap: 6.4rem;
+  row-gap: 1.4rem;
+}
+
+.divide {
+  padding-bottom: 1.5rem !important;
+  border-bottom: 1px solid #dad6c8 !important;
+}
+
+.about-form label {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #707070;
+}
+
+.edit-input {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 400;
+  border: none;
+  outline: none;
+}
+
+.bio {
+  font-size: 1.6rem;
+  font-weight: 400;
+  width: 26.2rem;
+  height: 4.8rem;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+/* Basic */
+.gender-inputs {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.gender-inputs label {
+  position: relative;
+  padding-left: 2.4rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.custom-radio {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--color-secondary);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.custom-radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-secondary);
+  opacity: 0;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-input:checked + label .custom-radio::after {
+  opacity: 1;
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.6rem;
+}
+
+.select-wrapper label {
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+  color: #161720;
+}
+
+.select-menu {
+  width: 19rem;
+  position: relative;
+  border: 1px solid #d9d9d7;
+  border-radius: 1.1rem;
+  box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.12);
+}
+
+.select-menu .select-btn {
+  display: flex;
+  height: 4.2rem;
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.select-menu .options {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid #d9d9d7;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+}
+.select-menu.active-select .options {
+  display: block;
+}
+
+.sBtn-text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+.options .option {
+  display: flex;
+  height: 4rem;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+
+.options .option:hover {
+  background: #f2f2f2;
+}
+
+.option .option-text {
+  font-size: 1.6rem;
+  color: #7d8082;
+}
+
+.select-menu img {
+  transition: 0.5s ease-out;
+}
+
+.select-menu.active-select img {
+  transform: rotate(180deg);
+}
+
+.date {
+  font-size: 1.6rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+}
+
+@media only screen and (max-width: 62em) {
+  .edit-container {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-tabs .nav-tabs {
+    flex-direction: row;
+  }
+
+  .edit-tabs .nav-item {
+    flex: 1;
+  }
+
+  .edit-tabs .nav-link {
+    text-align: center;
+  }
+
+  .edit-tabs .nav-link::before {
+    top: initial;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .edit-shape {
+    height: 27rem;
+  }
+
+  .edit-buttons {
+    flex-direction: column;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-box {
+    padding: 3rem;
+  }
+
+  .empty {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about-form {
+    grid-template-columns: 1fr;
+  }
+}
