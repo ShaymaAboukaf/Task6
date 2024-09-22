@@ -27,6 +27,7 @@ const popularSwiper = new Swiper(".popular-swiper", {
     700: {
       slidesPerView: 3,
       spaceBetween: 40,
+      slidesPerGroup: 3,
     },
   },
 });
